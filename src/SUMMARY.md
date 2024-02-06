@@ -5,5 +5,7 @@
 - [Lagrangian Duality](Duality.md)
   - [Dual of an LP problem]()
   - [Dual of a QP problem]()
+- [Quadratic Programming]()
+- [Linear Programming]()
 
 # Model Predictive Control
