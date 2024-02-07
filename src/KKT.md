@@ -36,4 +36,4 @@ $$
 $$
 \bm{\mu}^\top \bm{g}(\bm{x}) = 0 \\
 $$
-(*If $\bm{x}$ lies inside the feasible set w.r.t to the condition $\bm{g}(\bm{x}) \leq 0$, then $\bm{\mu} = \bm{0}$. If it instead lies on the boundary, then $\bm{\mu} \geq \bm{0}$*)
+(*If $\bm{x}$ lies inside the feasible set w.r.t to the condition $\bm{g}(\bm{x}) \leq \bm{0}$, then $\bm{\mu} = \bm{0}$. If it instead lies on the boundary, then $\bm{\mu} \geq \bm{0}$*)

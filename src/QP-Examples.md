@@ -44,3 +44,7 @@ $$
 	\bm{b} &= \begin{bmatrix} 100 \end{bmatrix} \\ 
 \end{aligned}
 $$
+
+## Model Predictive Control (MPC)
+
+Optimal control of linear systems on a finite horizon can be more often than not stated as a QP. Formulation of these problems is a topic of future chapters.
