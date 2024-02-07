@@ -3,11 +3,11 @@
 Let us consider a constrained optimization problem in the form
 $$
 \begin{aligned}
-	\min_x & \quad \frac{1}{2} x^\top Q x + c^\top x \\
-	\text{s.t.} & \quad A x \leq b \,,
+	\min_{\bm{x}} & \quad \frac{1}{2} \bm{x}^\top \bm{Q} \bm{x} + \bm{c}^\top \bm{x} \\
+	\text{s.t.} & \quad \bm{A} \bm{x} \leq \bm{b} \,,
 \end{aligned}
 $$
-where $Q = Q^\top$.
+where $\bm{Q} = \bm{Q}^\top$.
 
 As the objective function is quadratic and the constraints linear the problem is convex. For this reason KKT conditions are not only necessary but also sufficient if a feasible $x$ w.r.t the constraints exists.
 
@@ -16,10 +16,10 @@ As the objective function is quadratic and the constraints linear the problem is
 The KKT conditions of this problem can be states as:
 $$
 \begin{aligned}
-Q x + c + A^\top \mu &= 0 & \text{stationarity} \\
-\quad A x &\leq b & \text{primal feasibility} \\
-\mu &\geq 0 & \text{dual feasibility} \\
-\mu^\top (A x - b) &= 0 & \text{complementary slackness}
+\bm{Q} \bm{x} + \bm{c} + \bm{A}^\top \bm{\mu} &= \bm{0} & \text{stationarity} \\
+\quad \bm{A} \bm{x} &\leq \bm{b} & \text{primal feasibility} \\
+\bm{\mu} &\geq \bm{0} & \text{dual feasibility} \\
+\bm{\mu}^\top (\bm{A} \bm{x} - \bm{b}) &= \bm{0} & \text{complementary slackness}
 \end{aligned}
 $$
 
@@ -40,10 +40,10 @@ $$
 #### Canonical form
 $$
 \begin{aligned}
-	Q &= \begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix} \\
-	c &= \begin{bmatrix} 0 \\ 0 \end{bmatrix} \\ 
-	A &= \begin{bmatrix} -1 & 1 \end{bmatrix} \\ 
-	b &= \begin{bmatrix} -1 \end{bmatrix} \\ 
+	\bm{Q} &= \begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix} \\
+	\bm{c} &= \begin{bmatrix} 0 \\ 0 \end{bmatrix} \\ 
+	\bm{A} &= \begin{bmatrix} -1 & 1 \end{bmatrix} \\ 
+	\bm{b} &= \begin{bmatrix} -1 \end{bmatrix} \\ 
 \end{aligned}
 $$
 
@@ -63,11 +63,9 @@ $$
 #### Canonical form
 $$
 \begin{aligned}
-	Q &= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \\
-	c &= \begin{bmatrix} 0 \\ 0 \end{bmatrix} \\ 
-	A &= \begin{bmatrix} 2 & 2 \end{bmatrix} \\ 
-	b &= \begin{bmatrix} 100 \end{bmatrix} \\ 
+	\bm{Q} &= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \\
+	\bm{c} &= \begin{bmatrix} 0 \\ 0 \end{bmatrix} \\ 
+	\bm{A} &= \begin{bmatrix} 2 & 2 \end{bmatrix} \\ 
+	\bm{b} &= \begin{bmatrix} 100 \end{bmatrix} \\ 
 \end{aligned}
 $$
-
-### Cable driven manipulator

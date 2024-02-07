@@ -7,6 +7,7 @@ title = "Optimal and Predictive Control"
 
 [output.html]
 additional-css = ["katex-extra.css"]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
 [build]
 create-missing = false
@@ -16,3 +17,6 @@ after = ["links"]
 
 [preprocessor.bib]
 bibliography = "references.bib"
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"

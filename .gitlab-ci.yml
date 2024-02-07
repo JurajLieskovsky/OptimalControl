@@ -11,6 +11,7 @@ pages:
     - mdbook --version || cargo install mdbook
     - mdbook-katex --version || cargo install mdbook-katex
     - mdbook-bib --help || cargo install mdbook-bib
+    - mdbook-mermaid --version || cargo install mdbook-mermaid
     - rm -rf public
   script:
     - mdbook build -d public
