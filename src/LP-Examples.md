@@ -1,4 +1,4 @@
-# Examples
+# LP Problem Examples
 
 ## Flow optimization
 We have a network (represented as directed graph). The graph has a "Source" of a medium (it can be for example gas, water or electricity) and Sink with additional nodes in between. All edges between source and sink has defined maximal capacity.

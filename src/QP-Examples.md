@@ -1,8 +1,8 @@
-# Examples
+# QP Problem Examples
 
 ## Circular paraboloid with a single constraint
 
-Let's visualize and solve a very simple QP problem of minimizing $x$ and $y$ for an objective function in the form of a circular paraboloid and a single linear inequality constraint.
+Let's visualize and solve a very simple QP problem of minimizing $x_1$ and $x_2$ for an objective function in the form of a circular paraboloid and a single linear inequality constraint.
 
 ### Mathematical model
 $$

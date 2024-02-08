@@ -7,5 +7,7 @@
   - [Examples](LP-Examples.md)
 - [Quadratic Programming](QP.md)
   - [Examples](QP-Examples.md)
+- [Non-Linear Programming]()
+  - [Examples](NLP-Examples.md)
 
 # Model Predictive Control
