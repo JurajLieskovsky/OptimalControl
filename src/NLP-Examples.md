@@ -21,4 +21,4 @@ $$
 \end{aligned}
 $$
 
-As we are dealing with a quadratic objective function and a cubic equality constraint, the python package CVXPY does not have an interface to a suitable solver the julia package JuMP does.
+As we are dealing with a quadratic objective function and a cubic equality constraint, the python package CVXPY does not have an interface to a suitable solver. Fortunately, the julia package JuMP does.
