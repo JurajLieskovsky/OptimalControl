@@ -11,3 +11,8 @@
   - [Examples](NLP-Examples.md)
 
 # Model Predictive Control
+
+# Appendix
+- [Cart-Pole EoM](CartPoleEoM.md)
+
+---
