@@ -11,8 +11,12 @@
   - [Examples](NLP-Examples.md)
 
 # Model Predictive Control
+- [Linear-Quadratic MPC](MPC.md)
+  - [Direct](MPC-Direct.md)
+  - [Indirect](MPC-Indirect.md)
 
 # Appendix
-- [Cart-Pole EoM](CartPoleEoM.md)
+- [Software Tools](SoftwareTools.md)
+<!-- - [Cart-Pole EoM](CartPoleEoM.md) -->
 
 ---
