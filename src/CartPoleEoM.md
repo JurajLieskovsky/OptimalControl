@@ -56,8 +56,8 @@ $$
 	\bm{M}
 	&=
 	\begin{bmatrix}
-		m_{c} +  m_{p} & - m_{p} \, l \cos{\left(\theta{\left(t \right)} \right)} \\
-		{-} m_{p} \, l \cos{\left(\theta{\left(t \right)} \right)} & m_{p} \, l^{2}
+		m_{c} + m_{p} & m_{p} \, l \cos{\left(\theta \right)} \\
+		m_{p} \, l \cos{\left(\theta \right)} & m_{p} \, l^{2}
 	\end{bmatrix}
 	\\
 	\bm{c} &= \begin{bmatrix} m_{p} \, l \sin{\left(\theta \right)} \, \dot{\theta}^{2} \\ 0 \end{bmatrix}
@@ -66,8 +66,6 @@ $$
 	\\
 	\bm{\tau} &= \begin{bmatrix}
 		u \\ 0
-		% u - b_c \, \dot{s} \\
-		% - b_p \, \dot{\theta}
 	\end{bmatrix} \,.
 \end{aligned}
 $$
