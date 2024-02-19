@@ -13,8 +13,8 @@
 # Model Predictive Control
 - [Linear-Quadratic MPC](MPC.md)
   - [Direct](MPC-Direct.md)
-    - [Examples](MPC-Direct-Examples.md)
   - [Indirect](MPC-Indirect.md)
+  - [Examples](MPC-Examples.md)
 
 # Appendix
 - [Software Tools](SoftwareTools.md)
