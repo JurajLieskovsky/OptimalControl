@@ -22,6 +22,14 @@ $$
 \end{aligned}
 $$
 
+### Code
+- julia
+	- [JuMP](https://github.com/lieskjur/nmoc-julia/blob/main/src/quadratic_programming-JuMP.jl)
+	- [OSQP](https://github.com/lieskjur/nmoc-julia/blob/main/src/quadratic_programming-OSQP.jl)
+- python
+	- [CVXPY](https://github.com/lieskjur/nmoc-python/blob/main/src/quadratic_programming-CVXPY.py)
+	- [OSQP](https://github.com/lieskjur/nmoc-python/blob/main/src/quadratic_programming-OSQP.py)
+
 ## Tree nursery
 We are tasked with planting a new patch of forest to offset logging activity. Because of the wildlife living there, the young trees need to be fences off from the rest of the forest until they mature.
 
@@ -44,6 +52,9 @@ $$
 	\bm{b} &= \begin{bmatrix} 100 \end{bmatrix} \\ 
 \end{aligned}
 $$
+
+### Code
+- [julia - JuMP](https://github.com/lieskjur/nmoc-julia/blob/main/src/rectangular_plot_dimensions.jl)
 
 ## Model Predictive Control (MPC)
 
