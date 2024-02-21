@@ -3,8 +3,8 @@
 The Karuch-Kuhn-Tucker (KKT) conditions are first order necessary conditions for finding the solution of an optimization problem in the form
 $$
 \begin{aligned}
-	\text{minimize:}& \quad f(\bm{x}) \\
-	\text{subject to:}& \quad \bm{g}(\bm{x}) ≤ \bm{0} \\
+	\min_x& \quad f(\bm{x}) \\
+	\text{s.t.}& \quad \bm{g}(\bm{x}) ≤ \bm{0} \\
 	                  & \quad \bm{h}(\bm{x}) = \bm{0} \,.
 \end{aligned}
 $$
