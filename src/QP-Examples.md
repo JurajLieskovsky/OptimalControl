@@ -30,31 +30,23 @@ $$
 	- [CVXPY](https://github.com/lieskjur/nmoc-python/blob/main/src/quadratic_programming-CVXPY.py)
 	- [OSQP](https://github.com/lieskjur/nmoc-python/blob/main/src/quadratic_programming-OSQP.py)
 
-## Tree nursery
-We are tasked with planting a new patch of forest to offset logging activity. Because of the wildlife living there, the young trees need to be fences off from the rest of the forest until they mature.
+## Economic dispatch
+We have three power plants each producing electricity to satisfy the demand of 3000 MW. Each of the power plants has a minimum and maximum capacity $P_{i_{\min}}$ and $P_{i_{\max}}$ and a quadratic cost model associated with its power output $l_i = a_i + b_i P_i + c_i P_i^2$. The capacity limits and cost coefficients are provided in the table bellow.
 
-As we will be planting adjacent plots in the future, we have decided upon fencing off a rectangular area. The factor limiting its size is that we only have 100 meters of suitable fencing. What is the largest rectangular area that we can plant?
+| Generator | $a_i$ | $b_i$ | $c_i$ | $P_{i_{\min}}$ | $P_{i_{\max}}$ |
+|-----------|-------|-------|-------|----------------|----------------|
+| 1         | 20    | 5     | 0.02  | 200            | 1000           |
+| 2         | 25    | 4     | 0.015 | 300            | 1500           |
+| 3         | 30    | 3     | 0.01  | 100            | 800            |
 
 ### Mathematical model
 $$
 \begin{aligned}
-	\max_{x_1, x_2} & \quad x_1 x_2 \\
-	\text{s.t.} & \quad 2x_1 + 2x_2 \leq 100 
+	\min_{\{P_i\}_{i=1}^3} & \quad \sum_{i=1}^{3} a_i + b_i P_i + c_i P_i^2 \\
+	\text{s.t.} & \quad P_{i_{\min}} \leq P_i \leq P_{i_{\min}} \,,\quad i = 1, \ldots, 3\\
 \end{aligned}
 $$
 
-### Canonical form
-$$
-\begin{aligned}
-	\bm{Q} &= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \\
-	\bm{c} &= \begin{bmatrix} 0 \\ 0 \end{bmatrix} \\ 
-	\bm{A} &= \begin{bmatrix} 2 & 2 \end{bmatrix} \\ 
-	\bm{b} &= \begin{bmatrix} 100 \end{bmatrix} \\ 
-\end{aligned}
-$$
-
-### Code
-- [julia - JuMP](https://github.com/lieskjur/nmoc-julia/blob/main/src/rectangular_plot_dimensions.jl)
 
 ## Model Predictive Control (MPC)
 
