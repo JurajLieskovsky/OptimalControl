@@ -15,7 +15,7 @@ $$
 
 ### Code
 - [julia - JuMP](https://github.com/lieskjur/nmoc-julia/blob/main/src/car_import.jl)
-- [python - JuMP](https://github.com/lieskjur/nmoc-python/blob/main/src/car_import.py)
+- [python - CVXPY](https://github.com/lieskjur/nmoc-python/blob/main/src/car_import.py)
 
 ## Flow optimization
 We have a network (represented as directed graph). The graph has a "Source" of a medium (it can be for example gas, water or electricity) and Sink with additional nodes in between. All edges between source and sink has defined maximal capacity.
