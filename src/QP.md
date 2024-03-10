@@ -7,7 +7,7 @@ $$
 	\text{s.t.} & \quad \bm{A} \bm{x} \leq \bm{b} \,,
 \end{aligned}
 $$
-where $\bm{Q} = \bm{Q}^\top$.
+where $\bm{Q} \succeq 0$.
 
 As the objective function is quadratic and the constraints linear the problem is convex. For this reason KKT conditions are not only necessary but also sufficient if a feasible $x$ w.r.t the constraints exists.
 
