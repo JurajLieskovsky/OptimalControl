@@ -16,6 +16,9 @@
   - [Indirect](MPC-Indirect.md)
   - [Examples](MPC-Examples.md)
 
+# Misc
+- [Discretization of LTI systems](LTI-Discretization.md)
+
 # Appendix
 - [Software Tools](SoftwareTools.md)
 <!-- - [Cart-Pole EoM](CartPoleEoM.md) -->
