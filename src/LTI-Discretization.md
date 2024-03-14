@@ -52,7 +52,7 @@ where $x_{k+1} = x(t+h)$, $x_k = x(t)$, and $u_k = \hat{u}$.
 
 ---
 
-If we use the first order approximation
+If we use the first two terms of the taylor expansion
 $$
 e^{Ah} = I + Ah + \frac{(Ah)^2}{2!} + \ldots
 $$
