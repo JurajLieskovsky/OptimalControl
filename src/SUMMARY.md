@@ -16,8 +16,11 @@
   - [Indirect](MPC-Indirect.md)
   - [Examples](MPC-Examples.md)
 
-# Misc
+# Modeling
 - [Discretization of LTI systems](LTI-Discretization.md)
+- [State-space representation of mechanical systems](EoM.md)
+  - [Cart-Pole](CartPoleEoM.md)
+  - [Bi-rotor](BirotorEoM.md)
 
 # Appendix
 - [Software Tools](SoftwareTools.md)
