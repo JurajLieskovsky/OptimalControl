@@ -63,7 +63,7 @@ $$
 	\text{s.t.} & \quad \bm{0} \leq \bm{x} \leq \bm{u} \\
 							& \quad x_4 + x_5 = x_2 \\
 	            & \quad x_6 + x_7 = x_3 \\
-	            & \quad x_8 = x_5 + x_6 + x_4 \\
+	            & \quad x_8 = x_1 + x_6 + x_4 \\
 	            & \quad x_9 = x_5 + x_7 \\
 \end{aligned}
 $$
@@ -118,3 +118,6 @@ $$
 \end{bmatrix}
 }_{\bm{b}}
 $$
+
+### Code
+- [python - CVXPY](https://github.com/lieskjur/nmoc-python/blob/main/src/flow.py)
