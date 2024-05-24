@@ -10,6 +10,10 @@
 - [Non-Linear Programming]()
   - [Examples](NLP-Examples.md)
 
+# Linear Quadratic Regulator
+- [Continuous time LQR]()
+- [Discrete time LQR]()
+
 # Model Predictive Control
 - [Linear-Quadratic MPC](MPC.md)
   - [Direct](MPC-Direct.md)
@@ -24,6 +28,5 @@
 
 # Appendix
 - [Software Tools](SoftwareTools.md)
-<!-- - [Cart-Pole EoM](CartPoleEoM.md) -->
 
 ---
