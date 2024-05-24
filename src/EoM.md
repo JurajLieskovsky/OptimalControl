@@ -23,7 +23,7 @@ $$
 ### Linearization
 The system's dynamics can be linearized by performing a Taylor expansion around a point $\{\bm{x}^*,\bm{u}^*\}$ which yields
 $$
-\dot{\bm{x}} = \bm{f}(\bm{x}, \bm{u}) \approx \bm{f}(\bm{x}^*,\bm{u}^*) + \frac{\partial \bm{f}}{\partial \bm{x}}(\bm{x}^*,\bm{u}^*) (\bm{x} - \bm{x}^*) + \frac{\partial \bm{f}}{\partial \bm{u}}(\bm{x}^*,\bm{u}^*) (\bm{u} - \bm{u}^*) \,.
+\dot{\bm{x}} = \bm{f}(\bm{x}, \bm{u}) \approx \bm{f}(\bm{x}^*,\bm{u}^*) + \underbrace{\frac{\partial \bm{f}}{\partial \bm{x}}(\bm{x}^*,\bm{u}^*)}_{\bm{A}_C} (\bm{x} - \bm{x}^*) + \underbrace{\frac{\partial \bm{f}}{\partial \bm{u}}(\bm{x}^*,\bm{u}^*)}_{\bm{B}_C} (\bm{u} - \bm{u}^*) \,.
 $$
 
 If $\{\bm{x}^*,\bm{u}^*\}$ is a fixed point, i.e. $\bm{f}(\bm{x}^*,\bm{u}^*) = \bm{0}$, first order partial derivatives of the system's dynamics simplify to
@@ -46,7 +46,7 @@ Compared to more advanced integration methods, linearization of these discrete t
 $$
 \begin{aligned}
 \bm{x}_{k+1} - \bm{x}^* &= \bm{x}_k + h \bm{f}(\bm{x}_k, \bm{u}_k) - \bm{x}^* \\
-&\approx \bm{f}(\bm{x}^*,\bm{u}^*) + \left( \bm{I} + h \frac{\partial \bm{f}}{\partial \bm{x}}(\bm{x}^*,\bm{u}^*) \right) (\bm{x}_k - \bm{x}^*) + h \frac{\partial \bm{f}}{\partial \bm{u}}(\bm{x}^*,\bm{u}^*) (\bm{u}_k - \bm{u}^*) \,.
+&\approx \bm{f}(\bm{x}^*,\bm{u}^*) + \underbrace{\left( \bm{I} + h \frac{\partial \bm{f}}{\partial \bm{x}}(\bm{x}^*,\bm{u}^*) \right)}_{\bm{A}_D} (\bm{x}_k - \bm{x}^*) + \underbrace{h \frac{\partial \bm{f}}{\partial \bm{u}}(\bm{x}^*,\bm{u}^*)}_{\bm{B}_D} (\bm{u}_k - \bm{u}^*) \,.
 \end{aligned}
 $$
 
