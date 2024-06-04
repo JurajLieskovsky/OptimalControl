@@ -30,7 +30,7 @@ $$
 $$
 \bm{\mu} \geq \bm{0} \\
 $$
-(*For a given $\bm{x}$, the Jacobian $∇\bm{g}(\bm{x})$ defines a linear cone in which (including its boundary) $\bm{\mu}^\top ∇\bm{g}(\bm{x})$ must lie*.)
+(*For a given $\bm{x}$, the columns of $∇\bm{g}(\bm{x})$ define a polyhedral cone in which $\bm{\mu}^\top ∇\bm{g}(\bm{x})$ must lie*.)
 
 - complementary slackness
 $$
