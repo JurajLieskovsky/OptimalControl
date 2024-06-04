@@ -1,14 +1,24 @@
-# Direct linear-quadratic MPC
-
-The standard realization of an MPC controller is such that solves the optimization problem
+# Reference tracking with Direct LQ MPC
+If we aim to track a reference $\{\bm{w}_k\}_{k=1}^N$ with the system's output
+$$
+\bm{y}_k = \bm{C} \bm{x}_k,
+$$
+we may define and error $\bm{e}_k = \bm{y}_k - \bm{w}_k$ and formulate an MPC problem
 $$
 \begin{aligned}
-	\min_{\{\bm{x}_k\}_{k=1}^{N+1}, \{\bm{u}_k\}_{k=0}^{N}} & \quad \bm{x}_k^\top \bm{Q} \bm{x}_k + \bm{u}_k^\top \bm{R} \bm{u}_k \\
+	\min_{\{\bm{x}_k\}_{k=1}^{N+1}, \{\bm{u}_k\}_{k=0}^{N}} & \quad \|\bm{e}_k||_{\bm{Q}}^2 + \|\bm{u}_k||_{\bm{R}}^2 \\
 	\text{s.t.} & \quad \bm{x}_{k+1} = \bm{A} \bm{x}_k + \bm{B} \bm{u}_k \\
 							& \quad \bm{u}_{\min} \leq \bm{u}_k \leq \bm{u}_{\max},
 \end{aligned}
 $$
-where the initial state $\bm{x}_0$ is given[^1].
+where the running cost is equivalent to
+$$
+(\bm{C} \bm{x}_k - \bm{w}_k)^\top \bm{Q} (\bm{C} \bm{x}_k - \bm{w}_k) + \bm{u}_k^\top \bm{R} \bm{u}_k,
+$$
+which further expands to
+$$
+\bm{x}_k^\top \bm{C}^\top \bm{Q} \, \bm{C} \, \bm{x}_k - 2 \bm{w}_k^\top \bm{Q} \, \bm{C} \, \bm{x}_k + \underbrace{\bm{w}_k^\top \bm{Q} \, \bm{w}_k}_{\mathrm{const.}} + \bm{u}_k^\top \bm{R} \, \bm{u}_k.
+$$
 
 ## Canonical QP form
 ### Optimized variables
@@ -30,15 +40,16 @@ $$
 ### Objective function's terms
 $$
 \begin{gathered}
-	\bm{P} = \left[\begin{array}{cccc|cccc}
-		\bm{R} &        &        &        &        &        &        &        \\
-		       & \ddots &        &        &        &        &        &        \\
-		       &        & \ddots &        &        &        &        &        \\
-		       &        &        & \bm{R} &        &        &        &        \\ \hline
-		       &        &        &        & \bm{Q} &        &        &        \\
-		       &        &        &        &        & \ddots &        &        \\
-		       &        &        &        &        &        & \ddots &        \\
-		       &        &        &        &        &        &        & \bm{Q}
+  \def\arraystretch{1.3}
+  \bm{P} = \left[\begin{array}{cccc|cccc}
+		\bm{R} &        &        &        &                              &        &        &        \\
+		       & \ddots &        &        &                              &        &        &        \\
+		       &        & \ddots &        &                              &        &        &        \\
+		       &        &        & \bm{R} &                              &        &        &        \\ \hline
+		       &        &        &        & \bm{C}^\top \bm{Q} \, \bm{C} &        &        &        \\
+		       &        &        &        &                              & \ddots &        &        \\
+		       &        &        &        &                              &        & \ddots &        \\
+		       &        &        &        &                              &        &        & \bm{C}^\top \bm{Q} \, \bm{C}
 	\end{array}\right]
 	\,,\;
 	\bm{q} = \left[\begin{array}{c}
@@ -46,15 +57,15 @@ $$
 		\vdots \\
 		\vdots \\
 		\bm{0} \\ \hline
-		\bm{0} \\
+		- \bm{C}^\top \bm{Q} \, \bm{w}_k \\ 
 		\vdots \\
 		\vdots \\
-		\bm{0}
+		- \bm{C}^\top \bm{Q} \, \bm{w}_k 
 	\end{array}\right]
 \end{gathered}
 $$
 
-### Constraint's terms
+#### Constraint's terms
 $$
 \begin{gathered}
 	\bm{l} = \left[\begin{array}{c}
@@ -91,7 +102,3 @@ $$
 	\end{array}\right]
 \end{gathered}
 $$
-
----
-
-[^1]: If the dynamics $\bm{x}_{k+1} = \bm{A} \bm{x}_k + \bm{B} \bm{u}_k$ represent the linearized dynamics of a nonlinear system (i.e. $\bm{x}_k$ and $\bm{u}_k$ are in-fact $\bar{\bm{x}}_k = \bm{x}_k - \bm{x}^*$ and $\bar{\bm{u}}_k = \bm{u}_k - \bm{u}^*$) the value of $\bm{u}^*$ must be considered in the choice of limits $\bm{u}_{\min}$ and $\bm{u}_{\max}$.
