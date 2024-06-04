@@ -10,11 +10,13 @@
 - [Non-Linear Programming]()
   - [Examples](NLP-Examples.md)
 
-# Linear Quadratic Regulator
-- [Continuous time LQR]()
-- [Discrete time LQR]()
-
-# Model Predictive Control
+# Optimal Control
+- [Bellman Principle]()
+  - [Bellman Equation](BellmanEqn.md)
+  - [Hamilton-Jacobi-Bellman Equation](HJB.md)
+- [Linear-Quadratic Regulator]()
+  - [Discrete-time](LQR-DT.md)
+  - [Continuous-time](LQR-CT.md)
 - [Linear-Quadratic MPC](MPC.md)
   - [Direct](MPC-Direct.md)
   - [Indirect](MPC-Indirect.md)
