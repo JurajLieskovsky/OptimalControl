@@ -13,7 +13,7 @@ Furthermore, they are also sufficient conditions for convex problems, i.e. those
 The conditions are as follows: 
 - stationarity
 $$
-	∇f(\bm{x}) + \bm{\mu}^T ∇\bm{g}(\bm{x}) + \bm{\lambda}^T ∇\bm{h}(\bm{x}) = \bm{0}
+	∇f(\bm{x}) + \bm{\mu}^\top ∇\bm{g}(\bm{x}) + \bm{\lambda}^\top ∇\bm{h}(\bm{x}) = \bm{0}
 $$
 (*The linear combination of the constraints' gradients has to be equal the objective function's gradient. In the case of a single equality constraint, this means that the constraint needs to be collinear with the contour of the objective function*)
 
@@ -30,10 +30,10 @@ $$
 $$
 \bm{\mu} \geq \bm{0} \\
 $$
-(*For $\bm{g}(\bm{x}) > \bm{0}$ the inequality $\mu^\top \bm{g}(\bm{x}) \geq \bm{0}$ must hold*)
+(*For a given $\bm{x}$, the Jacobian $∇\bm{g}(\bm{x})$ defines a linear cone in which (including its boundary) $\bm{\mu}^\top ∇\bm{g}(\bm{x})$ must lie*.)
 
 - complementary slackness
 $$
 \bm{\mu}^\top \bm{g}(\bm{x}) = 0 \\
 $$
-(*If $\bm{x}$ lies inside the feasible set w.r.t to the condition $\bm{g}(\bm{x}) \leq \bm{0}$, then $\bm{\mu} = \bm{0}$. If it instead lies on the boundary, then $\bm{\mu} \geq \bm{0}$*)
+(*If $\bm{x}$ lies inside the feasible set w.r.t to the condition $\bm{g}(\bm{x}) \leq \bm{0}$, then $\bm{\mu} = \bm{0}$ and therefore $\bm{\mu}^\top ∇\bm{g}(\bm{x}) = \bm{0}$.*)

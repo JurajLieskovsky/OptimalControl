@@ -27,9 +27,9 @@ The so-called *Bellman equation* can then be derived by formulating the value fu
 $$
 V(\bm{x}_k,k,N) = \min_{\{\bm{u}_i\}_{i=k}^{N-1}} \left(\mathcal{L}(\bm{x}_k,\bm{u}_k) + V(\bm{x}_{k+1},k+1,N)\right)
 $$
-and substituting $\bm{x}_{k+1}$ using the system's dynamics, $\bm{x}_k = \bm{x}$, and $\bm{u}_k = \bm{u}$ to attain the final form
+and substituting $\bm{x}_{k+1}$ using the system's dynamics to attain the final form
 $$
-V(\bm{x},k,N) = \min_{\bm{u}_k} \left(\mathcal{L}(\bm{x},\bm{u}_k) + V(\bm{f}(\bm{x},\bm{u}_k),k+1,N)\right).
+V(\bm{x}_k,k,N) = \min_{\bm{u}_k} \left(\mathcal{L}(\bm{x}_k,\bm{u}_k) + V(\bm{f}(\bm{x}_k,\bm{u}_k),k+1,N)\right).
 $$
 
 
