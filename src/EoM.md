@@ -23,7 +23,7 @@ $$
 ### Linearization
 The system's dynamics can be linearized by performing a Taylor expansion around a point $\{\bm{x}^*,\bm{u}^*\}$ which yields
 $$
-\dot{\bm{x}} = \bm{f}(\bm{x}, \bm{u}) \approx \bm{f}(\bm{x}^*,\bm{u}^*) + \underbrace{\frac{\partial \bm{f}}{\partial \bm{x}}(\bm{x}^*,\bm{u}^*)}_{\bm{A}_C} (\bm{x} - \bm{x}^*) + \underbrace{\frac{\partial \bm{f}}{\partial \bm{u}}(\bm{x}^*,\bm{u}^*)}_{\bm{B}_C} (\bm{u} - \bm{u}^*) \,.
+\dot{\bm{x}} = \bm{f}(\bm{x}, \bm{u}) \approx \bm{f}(\bm{x}^*,\bm{u}^*) + \underbrace{\frac{\partial \bm{f}}{\partial \bm{x}}(\bm{x}^*,\bm{u}^*)}_{\bm{A}_C} \underbrace{(\bm{x} - \bm{x}^*)}_{\bar{\bm{x}}} + \underbrace{\frac{\partial \bm{f}}{\partial \bm{u}}(\bm{x}^*,\bm{u}^*)}_{\bm{B}_C} \underbrace{(\bm{u} - \bm{u}^*)}_{\bar{\bm{u}}} \,.
 $$
 
 If $\{\bm{x}^*,\bm{u}^*\}$ is a fixed point, i.e. $\bm{f}(\bm{x}^*,\bm{u}^*) = \bm{0}$, first order partial derivatives of the system's dynamics simplify to
@@ -45,8 +45,8 @@ $$
 Compared to more advanced integration methods, linearization of these discrete time dynamics around a point $\{\bm{x}^*,\bm{u}^*\}$ is trival:
 $$
 \begin{aligned}
-\bm{x}_{k+1} - \bm{x}^* &= \bm{x}_k + h \bm{f}(\bm{x}_k, \bm{u}_k) - \bm{x}^* \\
-&\approx \bm{f}(\bm{x}^*,\bm{u}^*) + \underbrace{\left( \bm{I} + h \frac{\partial \bm{f}}{\partial \bm{x}}(\bm{x}^*,\bm{u}^*) \right)}_{\bm{A}_D} (\bm{x}_k - \bm{x}^*) + \underbrace{h \frac{\partial \bm{f}}{\partial \bm{u}}(\bm{x}^*,\bm{u}^*)}_{\bm{B}_D} (\bm{u}_k - \bm{u}^*) \,.
+\underbrace{\bm{x}_{k+1} - \bm{x}^*}_{\bar{\bm{x}}_{k+1}}&= \bm{x}_k + h \bm{f}(\bm{x}_k, \bm{u}_k) - \bm{x}^* \\
+&\approx \bm{f}(\bm{x}^*,\bm{u}^*) + \underbrace{\left( \bm{I} + h \frac{\partial \bm{f}}{\partial \bm{x}}(\bm{x}^*,\bm{u}^*) \right)}_{\bm{A}_D} \underbrace{(\bm{x}_k - \bm{x}^*)}_{\bar{\bm{x}}_k} + \underbrace{h \frac{\partial \bm{f}}{\partial \bm{u}}(\bm{x}^*,\bm{u}^*)}_{\bm{B}_D} \underbrace{(\bm{u}_k - \bm{u}^*)}_{\bar{\bm{u}}_k} \,.
 \end{aligned}
 $$
 

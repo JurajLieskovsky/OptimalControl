@@ -94,27 +94,25 @@ $$
 \end{gathered}
 $$
 
-## Alternative formulation
-Assuming we have linearized the system in a fixed point we may describe the MPC problem as
+## Generalized formulation
+Assuming we are linearizing the system around a series of fixed points $\{\bm{x}_k^*,\bm{u}_k^*\}$ that which lie in a close vicinity of each other we may formulate an MPC problem in the form
 $$
 \begin{aligned}
-	\min_{\{\bm{x}_k\}_1^{N+1}, \{\bm{u}_k\}_0^{N}} & \quad (\bm{x}_k - \bm{x}_{k_\mathrm{ref}})^\top \bm{Q} (\bm{x}_k - \bm{x}_{k_\mathrm{ref}}) + \bm{u}_k^\top \bm{R} \bm{u}_k \\
-	\text{s.t.} & \quad \bm{x}_{k+1} - \bm{x}^* = \bm{A} (\bm{x}_k - \bm{x}^*) + \bm{B} (\bm{u}_k - \bm{u}^*) \\
+	\min_{\{\bm{x}_k\}_1^{N+1}, \{\bm{u}_k\}_0^{N}} & \quad (\bm{x}_k - \bm{x}_k^*)^\top \bm{Q} (\bm{x}_k - \bm{x}_k^*) + \bm{u}_k^\top \bm{R} \bm{u}_k \\
+	\text{s.t.} & \quad \bm{x}_{k+1} - \bm{x}_k^* = \bm{A} (\bm{x}_k - \bm{x}_k^*) + \bm{B} (\bm{u}_k - \bm{u}_k^*) \\
 							& \quad \bm{u}_{\min} \leq \bm{u}_k \leq \bm{u}_{\max} \,,
 \end{aligned}
 $$
 
 where the running cost expands to
 $$
-\bm{x}_k^\top \bm{Q} \bm{x}_k - 2 \bm{x}_{k_\mathrm{ref}}^\top \bm{Q} \bm{x}_k + \underbrace{\bm{x}_{k_\mathrm{ref}}^\top \bm{Q} \bm{x}_{k_\mathrm{ref}}}_{\mathrm{const.}} + \bm{u}_k^\top \bm{R} \bm{u}_k
+\bm{x}_k^\top \bm{Q} \bm{x}_k - 2 \bm{x}_k^{*\top} \bm{Q} \bm{x}_k + \underbrace{\bm{x}_k^{*\top} \bm{Q} \bm{x}_k^*}_{\mathrm{const.}} + \bm{u}_k^\top \bm{R} \bm{u}_k
 $$
 and dynamics' constraint can be manipulated so that optimized variables are separated from constant terms
 $$
-\underbrace{\bm{A} \bm{x}^* + \bm{B} \bm{u}^* - \bm{x}^*}_{\bm{b}^*} = \bm{A} \bm{x}_k + \bm{B} \bm{u}_k - \bm{x}_{k+1} \,.
+\underbrace{\bm{A} \bm{x}_k^* + \bm{B} \bm{u}_k^* - \bm{x}_k^*}_{\bm{b}_k^*} = \bm{A} \bm{x}_k + \bm{B} \bm{u}_k - \bm{x}_{k+1} \,.
 $$
-There are two major differences between this and the standard formulation.
-1. Inputs $\bm{u}_k$ figure directly the term $\bm{u}_k^\top \bm{R} \bm{u}_k$ of the objective function,
-2. deviations of states are evaluated in relation to $\bm{x}_{k_\mathrm{ref}}$ which is useful for tracking problems as their values can differ on the optimization's horizon.
+The main differences between this and the standard problem is that $\bm{x}_k^*$ may form a trajectory and therefore this formulation can be used for tracking a pre-determined trajectory. Additionally, minimizing inputs $\bm{u}_k$ corresponds more closely to the general goal of minimizing the nonlinear system's power consumption.
 
 ### Canonical QP form
 #### Optimized variables
@@ -173,10 +171,10 @@ $$
 	\end{array}\right]
 	\\
 	\bm{l} = \left[\begin{array}{c}
-		\bm{b}^*- \bm{A} \bm{x}_0 \\
-		\bm{b}^* \\
+		\bm{b}_0^*- \bm{A} \bm{x}_0 \\
+		\bm{b}_1^* \\
 		\vdots \\
-		\bm{b}^* \\ \hline
+		\bm{b}_N^* \\ \hline
 		\bm{u}_{\min} \\
 		\vdots \\
 		\vdots \\
@@ -184,10 +182,10 @@ $$
 	\end{array}\right]
 	\,,\;
 	\bm{u} = \left[\begin{array}{c}
-		\bm{b}^* - \bm{A} \bm{x}_0 \\
-		\bm{b}^* \\
+		\bm{b}_0^* - \bm{A} \bm{x}_0 \\
+		\bm{b}_1^* \\
 		\vdots \\
-		\bm{b}^* \\ \hline
+		\bm{b}_N^* \\ \hline
 		\bm{u}_{\max} \\
 		\vdots \\
 		\vdots \\
