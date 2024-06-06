@@ -13,14 +13,14 @@ $$
 From the EoM we may see that for the state and input vectors
 $$
 \begin{aligned}
-\bm{x} &= \begin{bmatrix} \bm{q}^\top & \dot{\bm{q}}^\top \end{bmatrix}^\top = \begin{bmatrix} x & y & \theta & \dot{x} & \dot{y} & \dot{\theta} \end{bmatrix}^\top \\
+\bm{x} &= \begin{bmatrix} \bm{q} \\ \dot{\bm{q}} \end{bmatrix} = \begin{bmatrix} x & y & \theta & \dot{x} & \dot{y} & \dot{\theta} \end{bmatrix}^\top \\
 \bm{u} &= \begin{bmatrix} u_1 & u_2 \end{bmatrix}^\top
 \end{aligned}
 $$
 all points
 $$
 \begin{aligned}
-\bm{x}^* &= \begin{bmatrix} \bm{q}^{*\top} & \dot{\bm{q}}^{*\top} \end{bmatrix}^\top = \begin{bmatrix} x & y & 0 & 0 & 0 & 0 \end{bmatrix}^\top \,,\quad \{x,y\} \in \mathbb{R}^2 \\
+\bm{x}^* &= \begin{bmatrix} \bm{q}^{*} \\ \dot{\bm{q}}^{*} \end{bmatrix} = \begin{bmatrix} x & y & 0 & 0 & 0 & 0 \end{bmatrix}^\top \,,\quad \{x,y\} \in \mathbb{R}^2 \\
 \bm{u}^* &= \begin{bmatrix} \frac{1}{2}mg & \frac{1}{2}mg \end{bmatrix}^\top \\
 \end{aligned}
 $$
