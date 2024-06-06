@@ -19,7 +19,7 @@
   - [Continuous-time](LQR-CT.md)
 - [Linear-Quadratic MPC](MPC.md)
   - [Direct](MPC-Direct.md)
-    - [Reference Tracking](MPC-Direct-Tracking.md)
+    <!-- - [Reference Tracking](MPC-Direct-Tracking.md) -->
   - [Indirect](MPC-Indirect.md)
   - [Examples](MPC-Examples.md)
 
