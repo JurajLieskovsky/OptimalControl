@@ -1,4 +1,4 @@
-# Direct linear-quadratic MPC
+# Direct Linear-Quadratic MPC
 
 The standard realization of an MPC controller is such that solves the optimization problem
 $$

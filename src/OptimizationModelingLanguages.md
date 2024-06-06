@@ -1,4 +1,4 @@
-# Optimization modeling languages
+# Optimization Modeling Languages
 
 ## [CVXPY](https://www.cvxpy.org/)
 "Open source Python-embedded modeling language for convex optimization problems"

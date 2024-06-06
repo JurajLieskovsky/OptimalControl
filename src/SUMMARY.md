@@ -26,10 +26,10 @@
 ---
 
 # Modeling
-- [Discretization of LTI systems](LTI-Discretization.md)
-- [State-space representation of mechanical systems](EoM.md)
+- [Discretization of LTI Systems](LTI-Discretization.md)
+- [State-Space Representation of Mechanical Systems](EoM.md)
   - [Cart-Pole](CartPoleEoM.md)
-  - [Bi-rotor](BirotorEoM.md)
+  - [Bi-Rotor](BiRotorEoM.md)
 
 # Software
 - [Optimization Modeling Languages](OptimizationModelingLanguages.md)

@@ -1,4 +1,4 @@
-# State-space representation of mechanical systems
+# State-Space Representation of Mechanical Systems
 
 ## Equations of Motion
 Let us consider *manipulator equations* in the form

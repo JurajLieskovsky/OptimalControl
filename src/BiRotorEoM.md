@@ -1,4 +1,5 @@
 # Bi-Rotor Equations of Motion
+
 As a bi-rotor (quadcopter simplified to 2D) is essentially a rigid body, its equations of motion can be easily derived as
 $$
 \begin{aligned}

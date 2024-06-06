@@ -1,3 +1,5 @@
+# Discretization of LTI Systems
+
 Let us consider a linear time-invariant system in the form
 $$
 \dot{x}(\tau) = A x(\tau) + B u(\tau) \,.

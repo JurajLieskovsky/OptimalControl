@@ -1,4 +1,4 @@
-# Karuch-Kuhn-Tucker (KKT) Conditions
+# Karuch-Kuhn-Tucker Conditions
 
 The Karuch-Kuhn-Tucker (KKT) conditions are first order necessary conditions for finding the solution of an optimization problem in the form
 $$

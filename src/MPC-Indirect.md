@@ -1,4 +1,4 @@
-# Indirect formulation
+# Indirect Linear-Quadratic MPC
 
 $$
 \begin{aligned}

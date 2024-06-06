@@ -1,4 +1,4 @@
-# Direct LQ MPC Examples
+# Linear-Quadratic MPC Examples
 
 ## 2-DOF double integrator
 

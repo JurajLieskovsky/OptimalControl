@@ -1,4 +1,4 @@
-# Continuous-time Linear-Quadratic Regulator
+# Continuous-Time Linear-Quadratic Regulator
 
 For a linear time-invariant continuous-time system
 $$

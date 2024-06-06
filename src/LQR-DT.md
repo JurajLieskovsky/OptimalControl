@@ -1,4 +1,4 @@
-# Discrete-time Linear-Quadratic Regulator
+# Discrete-Time Linear-Quadratic Regulator
 
 For a linear time-invariant discrete-time system
 $$

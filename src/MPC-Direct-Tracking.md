@@ -1,4 +1,4 @@
-# Reference tracking with Direct LQ MPC
+# Reference Tracking with Direct LQ MPC
 If we aim to track a reference $\{\bm{w}_k\}_{k=1}^N$ with the system's output
 $$
 \bm{y}_k = \bm{C} \bm{x}_k,
