@@ -15,7 +15,7 @@ The conditions are as follows:
 $$
 	∇f(\bm{x}) + \bm{\mu}^\top ∇\bm{g}(\bm{x}) + \bm{\lambda}^\top ∇\bm{h}(\bm{x}) = \bm{0}
 $$
-(*The linear combination of the constraints' gradients has to be equal the objective function's gradient. In the case of a single equality constraint, this means that the constraint needs to be collinear with the contour of the objective function*)
+(*The linear combination of the constraints' gradients has to be equal to the objective function's gradient.*)
 
 - primal feasibility
 $$
@@ -24,7 +24,7 @@ $$
 	\bm{h}(\bm{x}) = \bm{0} \\
 \end{aligned}
 $$
-(*Constraints of the stated optimization problem have to be satisfied*)
+(*Constraints of the stated optimization problem have to be satisfied.*)
 
 - dual feasibility
 $$
@@ -36,4 +36,4 @@ $$
 $$
 \bm{\mu}^\top \bm{g}(\bm{x}) = 0 \\
 $$
-(*If $\bm{x}$ lies inside the feasible set w.r.t to the condition $\bm{g}(\bm{x}) \leq \bm{0}$, then $\bm{\mu} = \bm{0}$ and therefore $\bm{\mu}^\top ∇\bm{g}(\bm{x}) = \bm{0}$.*)
+(*If $\bm{x}$ lies inside the feasible set w.r.t to the condition $\bm{g}(\bm{x}) < \bm{0}$, then $\bm{\mu} = \bm{0}$ and therefore $\bm{\mu}^\top ∇\bm{g}(\bm{x}) = \bm{0}$.*)
