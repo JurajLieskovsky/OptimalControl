@@ -9,7 +9,7 @@ x_{k+1} = \bm{f}(\bm{x}_k,\bm{u}_k) ,
 $$
 starting from the state $\bm{x}_0 = \tilde{\bm{x}}_0$.
 
-The concept of the total cost can be generalized to a *cost-to-go*
+The concept of the total cost can be generalized for any $k \in \langle 0 , N \rangle$ to a *cost-to-go*
 $$
 J(\bm{x}_k,\{\bm{u}_i\}_{i=k}^{N-1},k,N) = \Phi(\bm{x}_N,N) + \sum_{i=k}^{N-1} \mathcal{L}(\bm{x}_i,\bm{u}_i),
 $$
@@ -25,7 +25,7 @@ the application of which results in the system following an optimal trajectory $
 
 The so-called *Bellman equation* can then be derived by formulating the value function for step $k$ recursively (using the value function for step $k+1$) as
 $$
-V(\bm{x}_k,k,N) = \min_{\{\bm{u}_i\}_{i=k}^{N-1}} \left(\mathcal{L}(\bm{x}_k,\bm{u}_k) + V(\bm{x}_{k+1},k+1,N)\right)
+V(\bm{x}_k,k,N) = \min_{\bm{u}_k} \left(\mathcal{L}(\bm{x}_k,\bm{u}_k) + V(\bm{x}_{k+1},k+1,N)\right)
 $$
 and substituting $\bm{x}_{k+1}$ using the system's dynamics to attain the final form
 $$
