@@ -5,7 +5,7 @@ Pontyagin's maximum/minimum principle is an alternative to the Bellman principle
 Let us consider the optimal control problem
 $$
 \begin{aligned}
-\min &\quad \Phi(\bm{x}(t_f)) + \int_{t_0}^{t_f} l(\bm{x}(t),\bm{u}(t),t) \, dt \\
+\min_{\bm{x}(t),\bm{u}(t)} &\quad \Phi(\bm{x}(t_f)) + \int_{t_0}^{t_f} l(\bm{x}(t),\bm{u}(t),t) \, dt \\
 \mathrm{s.t.} &\quad \dot{\bm{x}}(t) = \bm{f}(\bm{x}(t),\bm{u}(t),t) ,\quad \forall \bm{x}(t) \in \langle t_0, t_f\rangle, \\
 &\quad \bm{x}(t_0) = \tilde{\bm{x}}_0.
 \end{aligned}
