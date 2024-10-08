@@ -11,7 +11,7 @@
   - [Examples](NLP-Examples.md)
 
 # Optimal Control
-- [Bellman Principle]()
+- [Bellman Principle](Bellman.md)
   - [Bellman Equation](BellmanEqn.md)
   - [Hamilton-Jacobi-Bellman Equation](HJB.md)
 - [Pontryagin's Minimum Principle](PMP.md)
