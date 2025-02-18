@@ -1,6 +1,18 @@
 # Summary
 
-# Optimization
+- [Introduction](Introduction.md)
+
+# Classical Optimal Control
+- [Bellman Principle](Bellman.md)
+  - [Bellman Equation](BellmanEqn.md)
+  - [Hamilton-Jacobi-Bellman Equation](HJB.md)
+- [Pontryagin's Minimum Principle](PMP.md)
+  - [Hamilton's Equations](HamiltonsEquations.md)
+- [Linear-Quadratic Regulator]()
+  - [Discrete-time](LQR-DT.md)
+  - [Continuous-time](LQR-CT.md)
+
+# Numerical Optimization
 - [Karush-Kuhn-Tucker Conditions](KKT.md)
 - [Lagrangian Duality](Duality.md)
 - [Linear Programming](LP.md)
@@ -10,15 +22,7 @@
 - [Non-Linear Programming]()
   - [Examples](NLP-Examples.md)
 
-# Optimal Control
-- [Bellman Principle](Bellman.md)
-  - [Bellman Equation](BellmanEqn.md)
-  - [Hamilton-Jacobi-Bellman Equation](HJB.md)
-- [Pontryagin's Minimum Principle](PMP.md)
-  - [Hamilton's Equations](HamiltonsEquations.md)
-- [Linear-Quadratic Regulator]()
-  - [Discrete-time](LQR-DT.md)
-  - [Continuous-time](LQR-CT.md)
+# Model Predictive Control
 - [Linear-Quadratic MPC](MPC.md)
   - [Direct](MPC-Direct.md)
     <!-- - [Reference Tracking](MPC-Direct-Tracking.md) -->
@@ -28,10 +32,11 @@
 ---
 
 # Modeling
-- [Discretization of LTI Systems](LTI-Discretization.md)
 - [State-Space Representation of Mechanical Systems](EoM.md)
   - [Cart-Pole](CartPoleEoM.md)
   - [Bi-Rotor](BiRotorEoM.md)
+- [Controllability of LTI systems](LTI-Controllability.md)
+<!-- - [Discretization of LTI Systems](LTI-Discretization.md) -->
 
 # Software
 - [Optimization Modeling Languages](OptimizationModelingLanguages.md)

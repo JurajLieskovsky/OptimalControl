@@ -8,6 +8,6 @@ $$
 $$
 where
 $$
-\bm{x}_{k} = \bm{A}^{k} \bm{x}_0 + \sum_{i=0}^{k-1} \bm{A}^{k-i-1}\bm{B}\bm{u}_{i} \,,\quad k = 0, \ldots, N+1
+\bm{x}_{k} = \bm{A}^{k} \bm{x}_0 + \sum_{i=0}^{k-1} \bm{A}^{k-1-i}\bm{B}\bm{u}_{i} \,,\quad k = 0, \ldots, N+1
 $$
 
