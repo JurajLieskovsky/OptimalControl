@@ -6,8 +6,8 @@
 - [Bellman Principle](Bellman.md)
   - [Bellman Equation](BellmanEqn.md)
   - [Hamilton-Jacobi-Bellman Equation](HJB.md)
-- [Pontryagin's Minimum Principle](PMP.md)
-  - [Hamilton's Equations](HamiltonsEquations.md)
+<!-- - [Pontryagin's Minimum Principle](PMP.md) -->
+  <!-- - [Hamilton's Equations](HamiltonsEquations.md) -->
 - [Linear-Quadratic Regulator]()
   - [Discrete-time](LQR-DT.md)
   - [Continuous-time](LQR-CT.md)
