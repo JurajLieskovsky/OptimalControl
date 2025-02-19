@@ -1,68 +1,98 @@
 # Controllability/Reachability of an LTI system
 
-## Discrete-time
+Controllability and reachability are defined for discrete-time systems as:
 
-The state of a linear time-invariant system
+- A system is controllable if from any state $x_0 \in \Reals^n$ one can achieve the state $x_N = 0$ using a series of inputs $\{u_k\}_0^{N-1}$.
+- A state $x_N \in \Reals^n$ is reachable if it can be achieved by applying a series of inputs $\{u_k\}_0^{N-1}$ when starting from the initial state $x_0 = 0$.
+
+For continuous-time systems they are similarly defined as:
+
+- A system is controllable if from any state $x(0) \in \Reals^n$ one can achieve the state $x(t) = 0$ using a control policy $u(\tau)$, $\tau \in \langle 0, t)$.
+- A state $x(t) \in \Reals^n$ is reachable if it can be achieved by applying a control policy $u(\tau)$, $\tau \in \langle 0, t)$ when starting from the initial state $x(0) = 0$.
+
+For linear systems all states are reachable if the system is controllable.
+
+## Discrete time
+
+The first $n+1$ states of a linear time-invariant system
 $$
-x_{k+1} = A x_k + B u_k, \quad x_k \in \Reals^n,\ u_k \in \Reals^m
+x_{k+1} = A x_k + B u_k, \quad x_k \in \Reals^n,\ u_k \in \Reals^m,
 $$
-at step $N$, assuming an initial state $\bm{x}_0$ and a series of inputs $\{\bm{u}_k\}_0^{N-1}$, can be expressed as
+assuming an initial state $x_0$ and a series of inputs $\{u_k\}_0^{N-1}$, can be expressed as
 $$
-x_N = A^N x_0 + A^{N-1} B u_0 + A^{N-2} B u_1 + \ldots + B u_{N-1}
+\begin{aligned}
+x_1 &= A x_0 + B u_0 \\
+x_2 &= A^2 x_0 + A B u_0 + B u_1 \\
+    &\vdots \\
+x_n &= A^n x_0 + A^{n-1} B u_0 + A^{n-2} B u_1 + \ldots + B u_{n-1} \\
+x_{n+1} &= A^{n+1} x_0 + A^{n} B u_0 + A^{n-1} B u_1 + A^{n-2} B u_2 + \ldots + B u_n
+\end{aligned}
 $$
 For square matrices that satisfy their own characteristic equation the Cayley-Hamilton theorem states that for $N \geq n$ we may express $A^N$ as a linear combination of the lower matrix powers of $A$:
 $$
 A^N = a_0 I + a_1 A + \ldots + a_{n-1} A^{n-1}.
 $$
-Therefore, all final states reachable in $N > n$ steps are also reachable in $n$ steps using a series of inputs $\{\bm{u}_k\}_0^{n-1}$. The state at step $n$ can be expressed as
+Therefore, the state $x_{n+1}$ can be rewritten as
 $$
-x_n = A^n x_0 + A^{n-1} B u_0 + A^{n-2} B u_1 + \ldots + B u_{n-1}
+x_{n+1} = A^{n+1} x_0 + A^{n-1} B (u_1 + a_{n-1} u_0) + A^{n-2} B (u_2 + a_{n-2} u_0) + \ldots + B (u_n + a_{0} u_0)
 $$
-which can be further manipulated into the form
+which can be manipulated into the form
 $$
-x_n = A^n x_0 + R \begin{bmatrix} u_0 \\ u_1 \\ \vdots \\ u_{n-1} \end{bmatrix}
+x_{n+1} = A^{n+1} x_0 + R \begin{bmatrix}
+	u_{n} + a_{0} u_0 \\
+	u_{n-1} + a_{1} u_0 \\
+	u_1 + a_{n-1} u_0
+\end{bmatrix}.
 $$
 where
 $$ 
 R = \begin{bmatrix}
 	B & AB & \dots & A^{n-1}B
-\end{bmatrix},
+\end{bmatrix}
 $$
-is the controllability matrix. Therefore, for the state $x_N = 0$ to be reachable from any $x_0 \in \Reals^n$ the controllability matrix $R$ has to be full rank. Similarly, all states $x_N \in \Reals^n$ are reachable from $x_0 = 0$ only if $R$ is full rank.
+is the controllability matrix.
 
-## Continuous-time
+The same substitution can be applied also for subsequent timesteps up-to infinity, changing only the particular form of the vector of inputs' linear combinations. This has two consequences:
+- All states reachable in $N > n$ steps are also reachable in $n$ steps (with unlimited inputs).
+- If $R$ is rank deficient, some directions in the state-space cannot be effected by the inputs and therefore the system is uncontrollable.
+
+## Continuous time
 
 The state of a linear time-invariant system
 $$
-\dot{\bm{x}}(\tau) = \bm{A}\bm{x}(\tau) + \bm{B}\bm{u}(\tau), \quad \bm{x}(\tau) \in \Reals^n,\ \bm{u}(\tau) \in \Reals^m
-$$ at time $t$, starting from the initial state $\bm{x}(0)$ and influenced by a continuous input $\bm{u}(\tau)$, can be expressed as
+\dot{x}(\tau) = Ax(\tau) + Bu(\tau), \quad x(\tau) \in \Reals^n,\ u(\tau) \in \Reals^m
+$$ at time $t$, starting from the initial state $x(0)$ and influenced by a continuous input $u(\tau)$, can be expressed as
 $$
-\bm{x}(t) = e^{\bm{A}t} \bm{x}(0) + \int_0^t e^{\bm{A}(t-τ)} \bm{B} \bm{u}(τ)\ dτ. \tag{1}
+x(t) = e^{At} x(0) + \int_0^t e^{A(t-τ)} B u(τ)\ dτ. \tag{1}
 $$
-For square matrices that satisfy their own characteristic equation the Cayley-Hamilton theorem has a consequence that the exponential function $e^{\bm{A}t}$ can be expressed as
+For square matrices that satisfy their own characteristic equation the Cayley-Hamilton theorem has a consequence that the inifinite series
 $$
-e^{\bm{A}t} = ϕ_0(t) \bm{I} + ϕ_1(t) \bm{A} + \dots + ϕ_{n-1}(t) \bm{A}^{n-1}.
+e^{At} = I + At + \frac{(At)^2}{2!} + \ldots
+$$
+can be expressed using a finite number of terms
+$$
+e^{At} = ϕ_0(t) I + ϕ_1(t) A + \dots + ϕ_{n-1}(t) A^{n-1}.
 $$
 After substituting it back into the second term of (1) we attain
 $$
-\bm{x}(t) = e^{\bm{A}t} \bm{x}(0) + \int_0^t \big( ϕ_0(t-τ)\, \bm{I} + ϕ_1(t-τ)\, \bm{A} + \dots + ϕ_{n-1}(t-τ)\, \bm{A}^{n-1} \big) \bm{B} \bm{u}(\tau) \, dτ
+x(t) = e^{At} x(0) + \int_0^t \big( ϕ_0(t-τ)\, I + ϕ_1(t-τ)\, A + \dots + ϕ_{n-1}(t-τ)\, A^{n-1} \big) B u(\tau) \, dτ
 $$
 which can be further manipulated into the form
 $$
-\bm{x}(t) = e^{\bm{A}t} \bm{x}(0) + \bm{\bm{R}}
+x(t) = e^{At} x(0) + R
 \int_0^t
 \begin{bmatrix}
-	ϕ_0(t-τ)\ \bm{u}(τ)\\
-	ϕ_1(t-τ)\ \bm{u}(τ)\\
+	ϕ_0(t-τ)\ u(τ)\\
+	ϕ_1(t-τ)\ u(τ)\\
 	\vdots \\
-	ϕ_{n-1}(t-τ)\ \bm{u}(τ)\\
+	ϕ_{n-1}(t-τ)\ u(τ)\\
 \end{bmatrix}
 dτ,
 $$
 where
 $$ 
-\bm{R} = \begin{bmatrix}
-	\bm{B} & \bm{A}\bm{B} & \dots & \bm{A}^{n-1}\bm{B}
+R = \begin{bmatrix}
+	B & AB & \dots & A^{n-1}B
 \end{bmatrix}
 $$
-is the controllability matrix. For the state $\bm{x}(t) = \bm{0}$ to be reachable from any $\bm{x}(0) \in \Reals^n$ the controllability matrix $\bm{R}$ has to be full rank. Similarly, all states $\bm{x}(t) \in \Reals^n$ are reachable from $\bm{x}(0) = \bm{0}$ only if $\bm{R}$ is full rank.
+is the controllability matrix. If $R$ is rank deficient, some directions in the state-space cannot be effected by the inputs and therefore the system is uncontrollable.
