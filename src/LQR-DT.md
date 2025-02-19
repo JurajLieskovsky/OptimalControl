@@ -15,7 +15,7 @@ V(x_k,k) = x_k^\top S_k x_k, \quad S_k \succ 0.
 $$
 When substituted into the [Bellman Equation](BellmanEqn.md) along with the system's dynamics we attain
 $$
-x_k^\top S_k x_k = \min_{u_k} \left(x_k^\top Q x_k + u_k^\top R u_k + (A x_k + B u_k)^\top S_{k+1} (A x_k + B u_k)\right) \tag{1}.
+x_k^\top S_k x_k = \min_{u_k} \left\{x_k^\top Q x_k + u_k^\top R u_k + (A x_k + B u_k)^\top S_{k+1} (A x_k + B u_k)\right\} \tag{1}.
 $$
 To find the minimum, we may take the gradient of its argument (which is by design quadratic and convex) with respect to $u_k$, set it to zero and find the solution (optimal control input)
 $$

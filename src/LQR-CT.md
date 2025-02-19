@@ -14,7 +14,7 @@ V(x(t),t) = x(t)^\top S(t) \, x(t), \quad S(t) \succ 0.
 $$
 When substituted into the [Hamilton-Jacobi-Bellman Equation](HJB.md) along with the system's dynamics we attain
 $$
--x(t)^\top \dot{S}(t) \, x(t) = \min_{u(t)} \left(x(t)^\top Q \, x(t) + u(t)^\top R \, u(t) + 2 \, x(t)^\top S(t) \left(A \, x(t) + B \, u(t)\right) \right). \tag{1}
+-x(t)^\top \dot{S}(t) \, x(t) = \min_{u(t)} \left\{x(t)^\top Q \, x(t) + u(t)^\top R \, u(t) + 2 \, x(t)^\top S(t) \left(A \, x(t) + B \, u(t)\right) \right\}. \tag{1}
 $$
 To find the minimum, we may take the gradient of its argument (which is by design quadratic and convex) with respect to $u(t)$, set it to zero and find the solution (optimal control input)
 $$
