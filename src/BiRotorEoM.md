@@ -5,7 +5,7 @@ $$
 \begin{aligned}
 m \ddot{x} &= -\sin(\theta) \left( u_1 + u_2 \right) \\
 m \ddot{y} &= \cos(\theta) \left( u_1 + u_2 \right) - mg\\
-I \ddot{\theta} &= r \left( u_1 - u_2 \right) \,.
+I \ddot{\theta} &= a \left( u_1 - u_2 \right) \,.
 \end{aligned}
 $$
 
@@ -30,7 +30,7 @@ $$
 \begin{aligned}
 m\ddot{x} &\approx -mg\,\theta \\
 m\ddot{y} &\approx \bar{u}_1 + \bar{u}_2 \\
-I\ddot{\theta} &\approx r (\bar{u}_1 - \bar{u}_2) \,,
+I\ddot{\theta} &\approx a (\bar{u}_1 - \bar{u}_2) \,,
 \end{aligned}
 $$
 where $\bar{u}_i = u_i - \frac{1}{2}mg$ from which we may derive
@@ -62,9 +62,6 @@ $$
 $$
 The manipulation matrix
 $$
-\bm{B} = \begin{bmatrix} -\sin(\theta) & -\sin(\theta) \\ \cos(\theta) & \cos(\theta) \\ r & -r \end{bmatrix}
+\bm{B} = \begin{bmatrix} -\sin(\theta) & -\sin(\theta) \\ \cos(\theta) & \cos(\theta) \\ a & -a \end{bmatrix}
 $$
 can then be derived separately by evaluating thrust vectors and differentiating moment arms.
-
-
-
