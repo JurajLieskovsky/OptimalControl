@@ -56,7 +56,7 @@ x_{k+1} = x_k + h f(x_k,u_k) \,.
 $$
 
 ### Linearization
-Compared to more advanced integration methods, linearization of these discrete time dynamics around a point $\{x^*,u^*\}$ is trival:
+Compared to more advanced integration methods, linearization of these discrete time dynamics around a point $\{x^*,u^*\}$ is trivial:
 $$
 \begin{aligned}
 \underbrace{x_{k+1} - x^*}_{\bar{x}_{k+1}}&= x_k + h f(x_k, u_k) - x^* \\
