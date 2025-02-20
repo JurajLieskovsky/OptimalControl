@@ -14,15 +14,15 @@ $$
 From the EoM we may see that for the state and input vectors
 $$
 \begin{aligned}
-\bm{x} &= \begin{bmatrix} \bm{q} \\ \dot{\bm{q}} \end{bmatrix} = \begin{bmatrix} x & y & \theta & \dot{x} & \dot{y} & \dot{\theta} \end{bmatrix}^\top \\
-\bm{u} &= \begin{bmatrix} u_1 & u_2 \end{bmatrix}^\top
+x &= \begin{bmatrix} q \\ \dot{q} \end{bmatrix} = \begin{bmatrix} x & y & \theta & \dot{x} & \dot{y} & \dot{\theta} \end{bmatrix}^\top \\
+u &= \begin{bmatrix} u_1 & u_2 \end{bmatrix}^\top
 \end{aligned}
 $$
 all points
 $$
 \begin{aligned}
-\bm{x}^* &= \begin{bmatrix} \bm{q}^{*} \\ \dot{\bm{q}}^{*} \end{bmatrix} = \begin{bmatrix} x & y & 0 & 0 & 0 & 0 \end{bmatrix}^\top \,,\quad \{x,y\} \in \mathbb{R}^2 \\
-\bm{u}^* &= \begin{bmatrix} \frac{1}{2}mg & \frac{1}{2}mg \end{bmatrix}^\top \\
+x^* &= \begin{bmatrix} q^{*} \\ \dot{q}^{*} \end{bmatrix} = \begin{bmatrix} x & y & 0 & 0 & 0 & 0 \end{bmatrix}^\top \,,\quad \{x,y\} \in \mathbb{R}^2 \\
+u^* &= \begin{bmatrix} \frac{1}{2}mg & \frac{1}{2}mg \end{bmatrix}^\top \\
 \end{aligned}
 $$
 are stationary points, for which the linearization of EoM is also trivial
@@ -39,7 +39,7 @@ where $\bar{u}_i = u_i - \frac{1}{2}mg$ from which we may derive
 
 For those who want to validate the equations by deriving the manipulator equations, kinetic and potential energy for generalized coordinates
 $$
-\bm{q} = \begin{bmatrix}
+q = \begin{bmatrix}
   x \\ y \\ \theta
 \end{bmatrix}
 $$
@@ -52,16 +52,16 @@ V &= m g y
 $$
 which should yield
 $$
-\bm{M} = \begin{bmatrix}
+M = \begin{bmatrix}
   m & 0 & 0 \\
   0 & m & 0 \\
   0 & 0 & I
 \end{bmatrix} \quad
-\bm{c} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} \quad
-\bm{\tau}_g = \begin{bmatrix} 0 \\ -mg \\ 0 \end{bmatrix} \,.
+c = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} \quad
+\tau_g = \begin{bmatrix} 0 \\ -mg \\ 0 \end{bmatrix} \,.
 $$
 The manipulation matrix
 $$
-\bm{B} = \begin{bmatrix} -\sin(\theta) & -\sin(\theta) \\ \cos(\theta) & \cos(\theta) \\ a & -a \end{bmatrix}
+B = \begin{bmatrix} -\sin(\theta) & -\sin(\theta) \\ \cos(\theta) & \cos(\theta) \\ a & -a \end{bmatrix}
 $$
 can then be derived separately by evaluating thrust vectors and differentiating moment arms.

@@ -20,7 +20,7 @@ _________ooo___|___ooo_________
                |
 //|-----s----->|
 ```
-For generalized coordinates $\bm{q} = \begin{bmatrix} s & \theta \end{bmatrix}^\top$ the system's kinetic and potential energy are
+For generalized coordinates $q = \begin{bmatrix} s & \theta \end{bmatrix}^\top$ the system's kinetic and potential energy are
 $$
 \begin{aligned}
 	T &= \frac{1}{2} \left( m_c \dot{s}^2 + m_p \left(\dot{x}_p^2 + \dot{y}_p^2\right) \right) \\
@@ -37,18 +37,18 @@ $$
 The individual terms of the manipulator equations[^1] are then
 $$
 \begin{aligned}
-	\bm{M}
+	M
 	&=
 	\begin{bmatrix}
 		m_{c} + m_{p} & m_{p} \, l \cos{\left(\theta \right)} \\
 		m_{p} \, l \cos{\left(\theta \right)} & m_{p} \, l^{2}
 	\end{bmatrix}
 	\\
-	\bm{c} &= \begin{bmatrix} -m_{p} \, l \sin{\left(\theta \right)} \, \dot{\theta}^{2} \\ 0 \end{bmatrix}
+	c &= \begin{bmatrix} -m_{p} \, l \sin{\left(\theta \right)} \, \dot{\theta}^{2} \\ 0 \end{bmatrix}
 	\\
-	\bm{\tau}_g &= \begin{bmatrix} 0 \\ -g \, m_{p} \, l \sin{\left(\theta \right)}\end{bmatrix}
+	\tau_g &= \begin{bmatrix} 0 \\ -g \, m_{p} \, l \sin{\left(\theta \right)}\end{bmatrix}
 	\\
-	\bm{B} &= \begin{bmatrix}
+	B &= \begin{bmatrix}
 		1 \\ 0
 	\end{bmatrix} ,
 \end{aligned}
@@ -60,27 +60,27 @@ assuming a single input is acting in the direction of $s$.
 From the equations we may see that for the state and input vectors
 $$
 \begin{aligned}
-\bm{x} &= \begin{bmatrix} \bm{q} \\ \dot{\bm{q}} \end{bmatrix} = \begin{bmatrix} s & \theta & \dot{s} & \dot{\theta} \end{bmatrix}^\top \\
-\bm{u} &= \begin{bmatrix} u \end{bmatrix}
+x &= \begin{bmatrix} q \\ \dot{q} \end{bmatrix} = \begin{bmatrix} s & \theta & \dot{s} & \dot{\theta} \end{bmatrix}^\top \\
+u &= \begin{bmatrix} u \end{bmatrix}
 \end{aligned}
 $$
 all points
 $$
 \begin{aligned}
-\bm{x}^* &= \begin{bmatrix} \bm{q}^{*} \\ \dot{\bm{q}}^{*} \end{bmatrix} = \begin{bmatrix} s & \pi & 0 & 0 \end{bmatrix}^\top ,\quad s \in \mathbb{R} \\
-\bm{u}^* &= \begin{bmatrix} 0 \end{bmatrix}
+x^* &= \begin{bmatrix} q^{*} \\ \dot{q}^{*} \end{bmatrix} = \begin{bmatrix} s & \pi & 0 & 0 \end{bmatrix}^\top ,\quad s \in \mathbb{R} \\
+u^* &= \begin{bmatrix} 0 \end{bmatrix}
 \end{aligned}
 $$
 are stationary. In this configuration the relevant terms for the system's linearization are
 $$
 \begin{aligned}
-\bm{M}(\bm{q}^*) &=	\begin{bmatrix}
+M(q^*) &=	\begin{bmatrix}
 	m_{c} + m_{p} & m_{p} \, l \\
 	m_{p} \, l & m_{p} \, l^{2}
 \end{bmatrix} \\
-\frac{\partial \bm{\tau}_g}{\partial \bm{q}}(\bm{q}^*) &= \begin{bmatrix} 0 & 0 \\ 0 & g \, m_{p} \, l \end{bmatrix} \\
-\frac{\partial \bm{B}}{\partial \bm{q}}(\bm{q}^*) &= \bm{0} \\
-\bm{B}(\bm{q}^*) &= \begin{bmatrix}
+\frac{\partial \tau_g}{\partial q}(q^*) &= \begin{bmatrix} 0 & 0 \\ 0 & g \, m_{p} \, l \end{bmatrix} \\
+\frac{\partial B}{\partial q}(q^*) &= 0 \\
+B(q^*) &= \begin{bmatrix}
 	1 \\ 0
 \end{bmatrix} 
 \end{aligned}
