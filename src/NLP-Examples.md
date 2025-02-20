@@ -40,7 +40,7 @@ $$
 ### QP-like form
 $$
 \begin{aligned}
-	\bm{Q} &= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \\
+	\bm{Q} &= \begin{bmatrix} 0 & -1 \\ -1 & 0 \end{bmatrix} \\
 	\bm{c} &= \begin{bmatrix} 0 \\ 0 \end{bmatrix} \\ 
 	\bm{A} &= \begin{bmatrix} 2 & 2 \end{bmatrix} \\ 
 	\bm{b} &= \begin{bmatrix} 100 \end{bmatrix} \\ 
