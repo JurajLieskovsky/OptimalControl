@@ -11,7 +11,7 @@ $$
 J(x_0,\{u_i\}_{i=0}^{N},0) = \underbrace{x_N^\top Q x_N}_{\Phi(x_N)} + \sum_{i=0}^{N-1} \underbrace{x_i^\top Q x_i + u_i^\top R u_i}_{l(x_i, u_i, i)}
 , \quad Q \succeq 0, R \succ 0
 $$
-of its trajectory $\{x_i\}_{i=0}^N$, it is known that the value function takes a quadratic form
+of its trajectory $\{x_i\}_{i=0}^N$ the optimal controller can be derived based on the assumption that the value function takes the form
 $$
 V(x_k,k) = x_k^\top S_k x_k, \quad S_k \succ 0.
 $$
@@ -31,6 +31,7 @@ $$
 for a finite horizon $N \in \mathbb{N}$ @@Underactuated2023[^1].
 
 ## Infinite horizon
+
 For a linear time-invariant discrete-time system
 $$
 x_{k+1} = \underbrace{A x_k + B u_k}_{f(x_k, u_k, k)}
@@ -40,7 +41,7 @@ $$
 J(x_0,\{u_i\}_{i=0}^{\infty},0) = \sum_{i=0}^{\infty} \underbrace{x_i^\top Q x_i + u_i^\top R u_i}_{l(x_i, u_i, i)}
 , \quad Q \succeq 0, R \succ 0
 $$
-of its trajectory $\{x_i\}_{i=0}^\infty$, it is known that the value function takes a quadratic form
+of its trajectory $\{x_i\}_{i=0}^\infty$ the optimal controller can be derived based on the assumption that the value function takes the form
 $$
 V(x_k,k) = x_k^\top S x_k, \quad S \succ 0.
 $$
