@@ -8,9 +8,9 @@ $$
 $$
 and a quadratic total cost
 $$
-J(x(t_0),u(\tau),t_0) = \underbrace{x(t_f)^\top Q \, x(t_f)}_{\Phi(x_N)} + \int_{t_0}^{t_f} \underbrace{x(\tau)^\top Q \, x(\tau) + u(\tau)^\top R \, u(\tau)}_{l(x(\tau), u(\tau), \tau)} \, d\tau,
+J(x(t_0),u(\tau),t_0) = \underbrace{x(t_f)^\top Q_f \, x(t_f)}_{\Phi(x_N)} + \int_{t_0}^{t_f} \underbrace{x(\tau)^\top Q \, x(\tau) + u(\tau)^\top R \, u(\tau)}_{l(x(\tau), u(\tau), \tau)} \, d\tau,
 $$
-where $Q \succeq 0$ and $R \succ 0$, of its trajectory $x(\tau)$, $\tau \in (t_0,t_f\rangle$ the optimal controller can be derived based on the assumption that the value function takes the form
+where $Q_f \succeq 0$, $Q \succeq 0$, and $R \succ 0$, of its trajectory $x(\tau)$, $\tau \in (t_0,t_f\rangle$ the optimal controller can be derived based on the assumption that the value function takes the form
 $$
 V(x(t),t) = x(t)^\top S(t) \, x(t), \quad S(t) \succ 0.
 $$
@@ -25,7 +25,7 @@ $$
 
 The input can then be substituted back into (1). As the equation must hold for all $x(t)$, through basic manipulations we then attain the *continuous-time differential Riccati equation (CDRE)*
 $$
--\dot{S}(t) = Q - S(t) B^\top R^{-1} B S(t) + S(t) A + A^\top S(t), \quad S(t_f) = Q
+-\dot{S}(t) = Q - S(t) B^\top R^{-1} B S(t) + S(t) A + A^\top S(t), \quad S(t_f) = Q_f
 $$
 for a finite horizon $t_f \in \mathbb{R}$ @@Underactuated2023[^1].
 
