@@ -4,36 +4,57 @@ As a bi-rotor (quadcopter simplified to 2D) is essentially a rigid body, its equ
 $$
 \begin{aligned}
 m \ddot{x} &= -\sin(\theta) \left( u_1 + u_2 \right) \\
-m \ddot{y} &= \cos(\theta) \left( u_1 + u_2 \right) - mg\\
+m \ddot{y} &= \cos(\theta) \left( u_1 + u_2 \right) - mg \\
 I \ddot{\theta} &= a \left( u_1 - u_2 \right) \,.
 \end{aligned}
 $$
 
-## Linearization in hovering configuration
+## Linearization in a hovering configuration
 
-From the EoM we may see that for the state and input vectors
+From the EoM we may see that for the state description
 $$
 \begin{aligned}
-x &= \begin{bmatrix} q \\ \dot{q} \end{bmatrix} = \begin{bmatrix} x & y & \theta & \dot{x} & \dot{y} & \dot{\theta} \end{bmatrix}^\top \\
-u &= \begin{bmatrix} u_1 & u_2 \end{bmatrix}^\top
+x &= \begin{bmatrix} x \\ y \\ \theta \\ \dot{x} \\ \dot{y} \\ \dot{\theta} \end{bmatrix}, &
+\dot{x} &= \begin{bmatrix}
+\dot{x} \\
+\dot{y} \\
+\dot{\theta} \\
+-\frac{1}{m} \sin(\theta) \left( u_1 + u_2 \right) \\
+\frac{1}{m} \cos(\theta) \left( u_1 + u_2 \right) - mg \\
+\frac{a}{I} \left( u_1 - u_2 \right)
+\end{bmatrix} \\  
+u &= \begin{bmatrix} u_1 \\ u_2 \end{bmatrix}
 \end{aligned}
 $$
 all points
 $$
 \begin{aligned}
-x^* &= \begin{bmatrix} q^{*} \\ \dot{q}^{*} \end{bmatrix} = \begin{bmatrix} x & y & 0 & 0 & 0 & 0 \end{bmatrix}^\top \,,\quad \{x,y\} \in \mathbb{R}^2 \\
+x^* &= \begin{bmatrix} x & y & 0 & 0 & 0 & 0 \end{bmatrix}^\top \,,\quad \{x,y\} \in \mathbb{R}^2 \\
 u^* &= \begin{bmatrix} \frac{1}{2}mg & \frac{1}{2}mg \end{bmatrix}^\top \\
 \end{aligned}
 $$
-are stationary points, for which the linearization of EoM is also trivial
+are stationary points, for which the system's linearization is trivial
 $$
 \begin{aligned}
-m\ddot{x} &\approx -mg\,\theta \\
-m\ddot{y} &\approx \bar{u}_1 + \bar{u}_2 \\
-I\ddot{\theta} &\approx a (\bar{u}_1 - \bar{u}_2) \,,
+	A &= \left[\begin{array}{ccc|ccc}
+		     &     &     &  1  &     &     \\
+		     &     &     &     &  1  &     \\
+		     &     &     &     &     &  1  \\ \hline
+		     &     & -g  &     &     &     \\
+		     &     &     &     &     &     \\
+		     &     &     &     &     &    
+	\end{array}\right]
+  \\
+	B &= \left[\begin{array}{cc}
+		            &              \\
+		            &              \\
+		            &              \\ \hline
+		            &              \\
+		\frac{1}{m} & \frac{1}{m}  \\
+		\frac{a}{I} & \frac{-a}{I}
+	\end{array}\right]
 \end{aligned}
 $$
-where $\bar{u}_i = u_i - \frac{1}{2}mg$ from which we may derive
 
 ## Derivation in manipulator equation form
 
