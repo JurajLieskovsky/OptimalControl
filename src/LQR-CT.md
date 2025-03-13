@@ -53,7 +53,13 @@ $$
 
 The input can then be substituted back into (1). As the equation must hold for all $x(t)$, through basic manipulations we then attain the *continuous-time differential Riccati equation (CDRE)*
 $$
--\dot{S}(t) = Q - S(t) B^\top R^{-1} B S(t) + S(t) A + A^\top S(t), \quad S(t_f) = Q_f
+-\dot{S}(t) = Q - S(t) \, B^\top R^{-1} B \, S(t) + S(t) \, A + A^\top \! S(t) 
 $$
-for a finite horizon $t_f \in \mathbb{R}$.
-
+for a finite horizon $t_f \in \mathbb{R}$. Supplemented with the boundary conditon $S(t_f) = Q_f$, the CDRE forms a initial value problem (IVP) which can be solved using numerical integration. Numerical errors in the integration process may lead to the loss of positive-semi-definiteness. To overcome this, instead of integrating $S(t)$ directly, we may use its factorized form $S(t) = P(t) \, P^\top\!(t)$ a.k.a. the square-root form where
+$$
+-\dot{P}(t) = \frac{1}{2} Q \, {P^{-\top}\!(t)} - \frac{1}{2} {S(t)} \, B \, R^{-1} B^\top \! {P(t)} + A^\top \! {P(t)}.
+$$
+As $P(t)$ must be invertible $Q_f$ must be (numerically) positive definite. Consequenlty we may use the cholesky factorization in order to form the boundary condition
+$$
+P(t_f) = L, \quad Q_f = L \, L^\top
+$$
