@@ -13,8 +13,8 @@
   - [Continuous-time](LQR-CT.md)
 
 # Numerical Optimization
-- [Karush-Kuhn-Tucker Conditions](KKT.md)
 - [Lagrangian Duality](Duality.md)
+- [Karush-Kuhn-Tucker Conditions](KKT.md)
 - [Linear Programming](LP.md)
   - [Examples](LP-Examples.md)
 - [Quadratic Programming](QP.md)

@@ -32,7 +32,7 @@ $$
 q(\lambda,\mu) = \min_{x} L(x,\lambda,\mu) \leq L(x^*,\lambda,\mu)
 $$
 
-(*For any $\lambda$ and $\mu \geq 0$, I can find $x$ that minimizes the Lagrangian as well as or better than $x^*$ by violating the constraints.*)
+(*For any $\lambda$ and $\mu \geq 0$, I can find an $x$ that minimizes the Lagrangian as well as or better than $x^*$ by violating the constraints.*)
 
 <!--. As an example, I can potentially find an $x$ that mismatches the signs of $\lambda_i$ and $h_i(x) \neq 0$ while not increasing the values of $f(x)$ and $g_i(x)$*)-->
 
@@ -41,7 +41,7 @@ and
 $$
 L(x^*,\lambda,\mu) = f(x^*) + \lambda^\top \underbrace{h(x^*)}_{= 0} + \underbrace{\mu^\top}_{\geq 0} \underbrace{g(x^*)}_{\leq 0} \leq f(x^*)
 $$
-(*Because if $\mu_i > 0$ and $g_i(x^*) < 0$ then $\mu_i^\top g_i(x^*) < 0$*)
+(*Because if $\mu_i > 0$ and $g_i(x^*) < 0$ then $\mu_i g_i(x^*) < 0$*)
 
 $\Box$
 
@@ -54,7 +54,7 @@ $$
 <!--(*This might be important for iterative approaches*)-->
 
 ## Dual problem
-Consequently we may state the dual problem of finding the best lower bounds to the primal problem as
+As was proven $\min_x L(x,\lambda,\mu)$ provides a lower bound on the solution of the primal problem when $\mu \geq 0$. The dual problem can then be regarded as maximing this lower bound by penalizing violations of the primal problem's constraints using the Lagrange multipliers:
 $$
 \begin{aligned}
 	\max_{\lambda,\mu} & \enspace \underbrace{\min_{x} L(x,\lambda,\mu)}_{q(\lambda,\mu)} \\
@@ -63,7 +63,7 @@ $$
 \end{aligned}
 $$
 
-(*The second condition means we are looking only for bounded solutions*)
+The second condition states that we consider on $\lambda$ and $\mu$ such that the dual function is bounded. This is necessary for the problem to be well posed.
 
 ### (Weak duality) theorem
 If $x^*$ is the solution to the primal problem and $(\lambda^*,\mu^*)$ is the solution to the dual problem, then 
@@ -81,6 +81,3 @@ $$
 	q(\lambda^*,\mu^*) = f(x^*),
 $$
 they are optimal.
-
----
-[^1]: Note that $\mu \geq 0$ must hold in order to penalize the violation of $g(x) \leq 0$. 
