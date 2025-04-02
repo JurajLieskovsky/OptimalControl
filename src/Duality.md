@@ -9,24 +9,22 @@ $$
 \begin{aligned}
 	\min_{x} & \quad f(x) \\
 	\text{s.t.} & \quad g(x) ≤ 0 \\
-	            & \quad h(x) = 0 \,,
+	            & \quad h(x) = 0,
 \end{aligned}
 $$
 to which we will refer to as the primal problem. With regard to this problem, let us define the Lagrangian
 $$
-L(x,\lambda,\mu) = f(x) + \lambda^\top h(x) + \mu^\top g(x) \,,
+L(x,\lambda,\mu) = f(x) + \lambda^\top h(x) + \mu^\top g(x),
 $$
-where $\lambda$ and $\mu$ are Lagrange multipliers[^1].
-
-Consequently, let us refer to a function that minimizes the Lagrangian for a given $\lambda$ and $\mu$ as the dual function:
+where $\lambda$ and $\mu$ are Lagrange multipliers, and the dual function
 $$
-q(\lambda,\mu) = \min_{x} L(x,\lambda,\mu) \,.
+q(\lambda,\mu) = \min_{x} L(x,\lambda,\mu).
 $$
 
 ### Theorem
 Let $x^*$ be the solution to the primal problem. If $\mu \geq 0$, then
 $$
-q(\lambda,\mu) \leq f(x^*) \,.
+q(\lambda,\mu) \leq f(x^*).
 $$
 
 #### Proof 
@@ -50,7 +48,7 @@ $\Box$
 #### Corollary
 Let $x^*$ be the solution to the primal problem and $x$ feasible w.r.t its constraints. If $\lambda \in \mathbb{R}^n$ and $\mu \in \mathbb{R}^p$, $\mu \geq 0$, then
 $$
-q(\lambda,\mu) \leq f(x^*) \leq f(x) \,.
+q(\lambda,\mu) \leq f(x^*) \leq f(x).
 $$
 
 <!--(*This might be important for iterative approaches*)-->
@@ -61,7 +59,7 @@ $$
 \begin{aligned}
 	\max_{\lambda,\mu} & \enspace \underbrace{\min_{x} L(x,\lambda,\mu)}_{q(\lambda,\mu)} \\
 	\text{s.t.} & \enspace \mu \geq 0 \\
-              & \enspace (\lambda, \mu) \in \{\lambda, \mu \mid q(\lambda, \mu)>-\infty\} \,.
+              & \enspace (\lambda, \mu) \in \{\lambda, \mu \mid q(\lambda, \mu)>-\infty\}.
 \end{aligned}
 $$
 
@@ -70,7 +68,7 @@ $$
 ### (Weak duality) theorem
 If $x^*$ is the solution to the primal problem and $(\lambda^*,\mu^*)$ is the solution to the dual problem, then 
 $$
-	q(\lambda^*,\mu^*) \leq f(x^*) \,.
+	q(\lambda^*,\mu^*) \leq f(x^*).
 $$
 
 #### Corollary
@@ -80,7 +78,7 @@ If one problem is unbounded the other is infeasible.
 #### Corollary
 If $\exists \ x^*, \lambda^*, \mu^*$ such that
 $$
-	q(\lambda^*,\mu^*) = f(x^*) \,,
+	q(\lambda^*,\mu^*) = f(x^*),
 $$
 they are optimal.
 
