@@ -12,6 +12,9 @@
   - [Discrete-time](LQR-DT.md)
   - [Continuous-time](LQR-CT.md)
 
+# Classical Optimal Estimation
+- [Kalman Filter](KF.md)
+
 # Numerical Optimization
 - [Lagrangian Duality](Duality.md)
 - [Karush-Kuhn-Tucker Conditions](KKT.md)
