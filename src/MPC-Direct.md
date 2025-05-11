@@ -3,9 +3,9 @@
 The standard realization of an MPC controller is such that solves the optimization problem
 $$
 \begin{aligned}
-	\min_{\{\bm{x}_k\}_{k=1}^{N+1}, \{\bm{u}_k\}_{k=0}^{N}} & \quad \bm{x}_k^\top \bm{Q} \bm{x}_k + \bm{u}_k^\top \bm{R} \bm{u}_k \\
-	\text{s.t.} & \quad \bm{x}_{k+1} = \bm{A} \bm{x}_k + \bm{B} \bm{u}_k \\
-							& \quad \bm{u}_{\min} \leq \bm{u}_k \leq \bm{u}_{\max},
+	\min_{\{\bm{x}_k\}_{k=1}^{N}, \{\bm{u}_k\}_{k=0}^{N-1}} & \quad \bm{x}_N^\top \bm{Q}_N \bm{x}_N + \sum_{k=0}^{N-1} \bm{x}_k^\top \bm{Q} \bm{x}_k + \bm{u}_k^\top \bm{R} \bm{u}_k \\
+	\text{s.t.} & \quad \bm{x}_{k+1} = \bm{A} \bm{x}_k + \bm{B} \bm{u}_k, \quad k = 0, \ldots, N-1 \\
+							& \quad \bm{u}_{\min} \leq \bm{u}_k \leq \bm{u}_{\max}, \quad k = 0, \ldots, N-1
 \end{aligned}
 $$
 where the initial state $\bm{x}_0$ is given[^1].
@@ -18,11 +18,11 @@ $$
 		\bm{u}_0^\top &
 		\ldots &
 		\ldots &
-		\bm{u}_N^\top &
+		\bm{u}_{N-1}^\top &
 		\bm{x}_1^\top &
 		\ldots &
 		\ldots &
-		\bm{x}_{N+1}^\top
+		\bm{x}_{N}^\top
 	\end{array}\right]^\top
 \end{gathered}
 $$
