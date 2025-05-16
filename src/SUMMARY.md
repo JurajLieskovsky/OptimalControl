@@ -13,6 +13,7 @@
   - [Continuous-time](LQR-CT.md)
 
 # Classical Optimal Estimation
+- [Optimal Luenberger Observer](OptimalLuenbergerObserver.md)
 - [Kalman Filter](KF.md)
 
 # Numerical Optimization
