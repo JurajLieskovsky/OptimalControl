@@ -11,7 +11,7 @@ $$
 J(x_0,\{u_i\}_{i=0}^{\infty},0) = \sum_{i=0}^{\infty} \underbrace{x_i^\top Q x_i + u_i^\top R u_i}_{l(x_i, u_i, i)}
 , \quad Q \succeq 0, \; R \succ 0
 $$
-of its trajectory $\{x_i\}_{i=0}^\infty$ the optimal controller can be derived based on the assumption that the value function takes the form
+of its trajectory $\{x_i\}_{i=0}^\infty$ the optimal controller can be derived based on the assumption that the value function on the infinite horizon takes the time-invariant form
 $$
 V(x_k,k) = x_k^\top S x_k, \quad S \succ 0.
 $$
