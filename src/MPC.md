@@ -1,17 +1,7 @@
 # Linear-Quadratic MPC
 
-Model predictive control (MPC) is a control strategy which relies on the system's model to predict and optimize its trajectory online, applying inputs from the beginning of the predicted horizon. There are many algorithms for trajectory optimization, each adapted for a specific use-case. When talking about nonlinear systems in general, main factors determining the applicability of a specific algorithm are if the system is represented in continuous or discrete time and if its dynamics are continuous or hybrid.
+Model predictive control (MPC) is a control strategy which relies on the system's model to predict and optimize its trajectory online, periodically re-optimizing the trajectory as a form of feedback. If a linear representation of the system and a quadratic running and final cost are used, it is essentially an extension of the finite-horizon LQR that includes control in state inputs. This is in fact what is commonly referred to as MPC. If the system's dynamics are nonlinear or the cost functions contain terms that are not linear nor quadratic, the strategy is referred to as nonlinear MPC. 
 
-<!--
-Considerations when choosing between suitable algorithms include the option to supply an initial guess of the optimal trajectory (even if infeasible), strictly feasible iterates of the predicted trajectory, 
--->
-
-In this course we will limit ourselves to the specific case of linear systems[^1] represented in discrete time with a quadratic objective (LQ control problem) and box constraints on the system's inputs [^2]. This specific control problem can be transcribed into a QP problem with specialized solvers dedicated to finding its solution. We will go through two formulations of this problem:
-* direct - both states $\bm{x}_k$ and inputs $\bm{u}_k$ are the decision variables,
-* indirect - only inputs $\bm{u}_k$ are decision variables.
-
----
-
-[^1]: With some slight modification it can also be applied to the control of nonlinear system's near a fixed point.
-
-[^2]: There are no obstacles preventing us from also adding linear inequality constraints to states.
+In this course we will limit ourselves only to the former case which can be transcribed into a QP problem. We will go through two formulations of this problem based on how the system's dynamics are incorporated into the optimization problem:
+* explicitly constrained - both states $\bm{x}_k$ and inputs $\bm{u}_k$ are the decision variables,
+* implicitly constrained - only inputs $\bm{u}_k$ are decision variables.

@@ -1,35 +1,38 @@
 # Bellman Equation
-Let us assume we are trying to minimize the total cost
+For a discrete-time linear system, with dynamics in the form
 $$
-J(\bm{x}_0,\{\bm{u}_i\}_{i=0}^{N-1},0) = \Phi(\bm{x}_N) + \sum_{i=0}^{N-1} l(\bm{x}_i,\bm{u}_i,i).
+x_{k+1} = f(x_k,u_k,k),
 $$
-of a discrete-time system's trajectory $\{\bm{x}_i\}_{i=0}^N$ with dynamics in the form
+let us assume we are trying to minimize the total cost
 $$
-x_{k+1} = \bm{f}(\bm{x}_k,\bm{u}_k,k) ,
+J(x_0,u_{0:N-1},0) = \Phi(x_N) + \sum_{i=0}^{N-1} l(x_i,u_i,i).
 $$
-starting from the state $\bm{x}_0 = \tilde{\bm{x}}_0$.
-
-The concept of the total cost can be generalized for any $k \in \langle 0 , N \rangle$ to a *cost-to-go*
+of a trajectory $(x_{0:N}, u_{0:N-1})$ where the initial state $x_0$ is prescribed. The concept of the total cost can be generalized for any $k \in \langle 0 , N \rangle$ to a *cost-to-go*
 $$
-J(\bm{x}_k,\{\bm{u}_i\}_{i=k}^{N-1},k) = \Phi(\bm{x}_N) + \sum_{i=k}^{N-1} l(\bm{x}_i,\bm{u}_i,i),
+J(x_k,u_{k:N-1},k) = \Phi(x_N) + \sum_{i=k}^{N-1} l(x_i,u_i,i),
 $$
 for which we may define a value function
 $$
-V(\bm{x}_k,k) = \min_{\{\bm{u}_i\}_{i=k}^{N-1}} J(\bm{x}_k,\{\bm{u}_i\}_{i=k}^{N-1},k),
+V(x_k,k) = \min_{u_{k:N-1}} J(x_k,u_{k:N-1},k),
 $$
 and an optimal control policy
 $$
-\{\bm{u}^*_i\}_{i=k}^{N-1} = \argmin_{\{\bm{u}_i\}_{i=k}^{N-1}} J(\bm{x}_k,\{\bm{u}_i\}_{i=k}^{N-1},k),
+u_{k:N-1}^* = \argmin_{u_{k:N-1}} J(x_k,u_{k:N-1},k),
 $$
-the application of which results in the system following an optimal trajectory $\{\bm{x}^*_i\}_{i=k}^N$.
+the application of which results in the system following the optimal sequence of states $x_{k+1:N}^*$.
 
-The so-called Bellman equation can then be derived by formulating the value function for step $k$ recursively (using the value function for step $k+1$) as
+The so-called Bellman equation can then be derived by formulating the value function for step $k$ recursively, using the value function for step $k+1$. From its definition, it is apparent that
+$$\tag{1}
+V(x_k,k) = l(x_k,u_k^*,k) + V(x_{k+1}^*,k+1), \quad x_{k+1}^* = f(x_k, u_k^*, k),
 $$
-V(\bm{x}_k,k) = \min_{\bm{u}_k} \left(l(\bm{x}_k,\bm{u}_k,k) + V(\bm{x}_{k+1},k+1)\right)
+where
 $$
-and substituting $\bm{x}_{k+1}$ using the system's dynamics to attain the final form
+V(x_N, N) = \Phi(x_N).
 $$
-V(\bm{x}_k,k) = \min_{\bm{u}_k} \left(l(\bm{x}_k,\bm{u}_k,k) + V(\bm{f}(\bm{x}_k,\bm{u}_k,k),k+1)\right).
+Assuming we don't know what the optimal input at step $k$ is, we may pose the right-hand side of (1) as an optimization problem
+$$\tag{2}
+V(x_k,k) = \min_{u_k} \left(l(x_k,u_k,k) + V(f(x_k,u_k,k),k+1)\right).
 $$
+Equation (2) is then referred to as the Bellman equation.
 
 
