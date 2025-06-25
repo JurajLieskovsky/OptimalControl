@@ -31,7 +31,8 @@
 - [(Linear-Quadratic) MPC](MPC.md)
   - [Explicitly constrained](MPC-Direct.md)
     <!-- - [Reference Tracking](MPC-Direct-Tracking.md) -->
-  - [Implicity constrained](MPC-Indirect.md)
+  - [Implicity constrained]()
+  <!-- - [Implicity constrained](MPC-Indirect.md) -->
   <!-- - [Examples](MPC-Examples.md) -->
 
 ---
