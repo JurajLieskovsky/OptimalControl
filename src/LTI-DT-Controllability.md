@@ -16,18 +16,18 @@ x_{n+1} &= A^{n+1} x_0 + A^{n} B u_0 + A^{n-1} B u_1 + A^{n-2} B u_2 + \ldots + 
 $$
 For square matrices that satisfy their own characteristic equation the Cayley-Hamilton theorem states that for $N \geq n$ we may express $A^N$ as a linear combination of the lower matrix powers of $A$:
 $$
-A^N = a_0 I + a_1 A + \ldots + a_{n-1} A^{n-1}.
+A^N = a_{0,N} I + a_{1,N} A + \ldots + a_{n-1,N} A^{n-1}.
 $$
 Therefore, the state $x_{n+1}$ can be rewritten as
 $$
-x_{n+1} = A^{n+1} x_0 + A^{n-1} B (u_1 + a_{n-1} u_0) + A^{n-2} B (u_2 + a_{n-2} u_0) + \ldots + B (u_n + a_{0} u_0)
+x_{n+1} = A^{n+1} x_0 + A^{n-1} B (u_1 + a_{n-1,n} u_0) + A^{n-2} B (u_2 + a_{n-2,n} u_0) + \ldots + B (u_n + a_{0,n} u_0)
 $$
 which can be manipulated into the form
 $$
 x_{n+1} = A^{n+1} x_0 + R \begin{bmatrix}
-	u_{n} + a_{0} u_0 \\
-	u_{n-1} + a_{1} u_0 \\
-	u_1 + a_{n-1} u_0
+	u_{n} + a_{0,n} u_0 \\
+	u_{n-1} + a_{1,n} u_0 \\
+	u_1 + a_{n-1,n} u_0
 \end{bmatrix}.
 $$
 where

@@ -32,7 +32,7 @@ for a finite horizon $t_f \in \mathbb{R}$. Supplemented with the boundary condit
 $$
 -\dot{P}(t) = \frac{1}{2} Q \, {P^{-\!\top}\!(t)} - \frac{1}{2} {S(t)} \, B(t) \, R^{-1} B(t)^\top \! {P(t)} + A(t)^\top \! {P(t)}.
 $$
-As $P(t)$ must be invertible $Q_f$ must be (at least numerically) positive definite. Consequenlty we may use the cholesky factorization in order to form the boundary condition
+As $P(t)$ must be invertible $Q_f$ must be (at least numerically) positive definite. Consequenlty we may use the cholesky factorization (if $Q_f \succ 0$) or eigenvalue decomposition to form the boundary condition
 $$
 P(t_f) = L, \quad Q_f = L \, L^\top.
 $$
