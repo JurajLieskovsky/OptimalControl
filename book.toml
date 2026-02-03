@@ -1,7 +1,5 @@
 [book]
 authors = ["Juraj Lieskovský"]
-language = "en"
-multilingual = false
 src = "src"
 title = "Optimal and Predictive Control"
 
