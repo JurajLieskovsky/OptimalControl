@@ -49,8 +49,8 @@ $$
 $$
 as terms involving $\frac{\partial M^{-1}}{\partial q}$ drop out because $\tau_g - c + B u^* = 0$ for all fixed points. Partial derivatives of $c$ also disappear as all of its terms contain second degree products of velocities and all velocities must be equal to zero at a fixed point.
 
-## Discretization via integration using the explicit Euler scheme
-The most basic approach with which we may discretize continuous-time dynamics of a nonlinear system is by integrating the systems state with a timestep of $h$ using the explicit Euler scheme
+## Explicit Euler method discretization
+The most basic approach with which we may discretize continuous-time dynamics of a nonlinear system is by integrating the systems state with a timestep of $h$ using the explicit Euler method
 $$
 x_{k+1} = x_k + h f(x_k,u_k) \,.
 $$

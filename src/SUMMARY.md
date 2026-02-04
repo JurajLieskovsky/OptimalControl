@@ -3,7 +3,7 @@
 - [Introduction](Introduction.md)
 
 # Pre-requisites
-- [Stability]()
+<!-- - [Stability]() -->
 - [Controllability of LTI Systems](Controllability.md)
   - [Discrete-time](LTI-DT-Controllability.md)
   - [Continuous-time](LTI-CT-Controllability.md)
@@ -17,11 +17,7 @@
 - [Lagrangian Duality](Duality.md)
 - [Karush-Kuhn-Tucker Conditions](KKT.md)
 - [Linear Programming](LP.md)
-  <!-- - [Examples](LP-Examples.md) -->
 - [Quadratic Programming](QP.md)
-  <!-- - [Examples](QP-Examples.md) -->
-<!-- - [Non-Linear Programming]() -->
-  <!-- - [Examples](NLP-Examples.md) -->
 
 # Optimal Control
 - [Bellman Principle](Bellman.md)
@@ -34,21 +30,28 @@
     - [Discrete-time Finite-horizon](LQR-DT-FH.md)
     - [Continuous-time Infinite-horizon](LQR-CT-IH.md)
     - [Continuous-time Finite-horizon](LQR-CT-FH.md)
-  <!-- - [Discrete-time]() -->
-  <!-- - [Continuous-time]() -->
-  <!-- - [Examples]() -->
 
 - [(Linear-Quadratic) MPC](MPC.md)
   - [Explicitly constrained](MPC-Direct.md)
     <!-- - [Reference Tracking](MPC-Direct-Tracking.md) -->
   - [Implicity constrained]()
   <!-- - [Implicity constrained](MPC-Indirect.md) -->
-  <!-- - [Examples](MPC-Examples.md) -->
 
 # Optimal Estimation
 - [Optimal Luenberger Observer](OptimalLuenbergerObserver.md)
 - [Kalman Filter](KF.md)
 - [Moving Horizon Estimation]()
+
+<!--
+---
+
+# Examples
+
+- [Linear Programming](LP-Examples.md)
+- [Quadratic Programming](QP-Examples.md)
+- [Nonlinear Programming](NLP-Examples.md)
+- [Model Predictive Control](MPC-Examples.md)
+-->
 
 ---
 
