@@ -39,7 +39,7 @@ jobs:
           cargo install --version ${MDBOOK_VERSION} mdbook
       - name: Install Preprocessors
         run: |
-          cargo install cargo install --git https://github.com/lzanini/mdbook-katex
+          cargo install --git https://github.com/lzanini/mdbook-katex
           cargo install mdbook-bib
           cargo install mdbook-mermaid
       - name: Setup Pages
