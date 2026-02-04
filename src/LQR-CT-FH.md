@@ -10,29 +10,22 @@ J(x(t_0),u(\tau),t_0) = \underbrace{x(t_f)^\top Q_f \, x(t_f)}_{\Phi(x_N)} + \in
 $$
 where $Q_f \succeq 0$, $Q \succeq 0$, and $R \succ 0$, of its trajectory $(x(\tau), u(\tau))$, $\tau \in \langle t_0,t_f\rangle$ the optimal controller can be derived based on the assumption that the value function takes the form
 $$
-V(x(t),t) = x(t)^\top S(t) \, x(t), \quad S(t) \succ 0.
+V(x(t),t) = x(t)^\top P(t) \, x(t), \quad P(t) \succ 0.
 $$
 When substituted into the [Hamilton-Jacobi-Bellman Equation](HJB.md) along with the system's dynamics we attain
 $$
 \begin{gathered}
--x(t)^\top\! \dot{S}(t)\, x(t) = \\
-\min_{u(t)} \left\{x(t)^\top Q \, x(t) + u(t)^\top R \, u(t) + 2 \, x(t)^\top S(t) \left(A(t) \, x(t) + B(t) \, u(t) \right) \right\}. \tag{1}
+-x(t)^\top\! \dot{P}(t)\, x(t) = \\
+\min_{u(t)} \left\{x(t)^\top Q \, x(t) + u(t)^\top R \, u(t) + 2 \, x(t)^\top P(t) \left(A(t) \, x(t) + B(t) \, u(t) \right) \right\}. \tag{1}
 \end{gathered}
 $$
 To find the minimum, we may take the gradient of its argument (which is by design quadratic and convex) with respect to $u(t)$, set it to zero and find the solution (optimal control input)
 $$
-u^*(t) = -R^{-1} B(t)^\top S(t) \, x(t) .
+u^*(t) = -R^{-1} B(t)^\top P(t) \, x(t) .
 $$
 
-The input can then be substituted back into (1). As the equation must hold for all $x(t)$, through basic manipulations we then attain the *continuous-time differential Riccati equation (CDRE)*
+The input can then be substituted back into (1). As the equation must hold for all $x(t)$, through basic manipulations we then attain the *differential Riccati equation (DRE)*
 $$
--\dot{S}(t) = Q - S(t) \, B(t)^\top R^{-1} B(t) \, S(t) + S(t) \, A(t) + A(t)^\top \! S(t) 
+-\dot{P}(t) = Q - P(t) \, B(t)^\top R^{-1} B(t) \, P(t) + P(t) \, A(t) + A(t)^\top \! P(t) 
 $$
-for a finite horizon $t_f \in \mathbb{R}$. Supplemented with the boundary conditon $S(t_f) = Q_f$, the CDRE forms a initial value problem (IVP) which can be solved using numerical integration. Numerical errors in the integration process may lead to the loss of positive-semi-definiteness. To overcome this, instead of integrating $S(t)$ directly, we may use its factorized form $S(t) = P(t) \, P^\top\!(t)$ a.k.a. the "square-root form" where
-$$
--\dot{P}(t) = \frac{1}{2} Q \, {P^{-\!\top}\!(t)} - \frac{1}{2} {S(t)} \, B(t) \, R^{-1} B(t)^\top \! {P(t)} + A(t)^\top \! {P(t)}.
-$$
-As $P(t)$ must be invertible $Q_f$ must be (at least numerically) positive definite. Consequenlty we may use the cholesky factorization (if $Q_f \succ 0$) or eigenvalue decomposition to form the boundary condition
-$$
-P(t_f) = L, \quad Q_f = L \, L^\top.
-$$
+for a finite horizon $t_f \in \mathbb{R}$. Supplemented with the boundary conditon $P(t_f) = Q_f$, the DRE forms an initial value problem (IVP) which can be solved using numerical integration. However, solving the problem is not straght-forward. The positive semi-definiteness of $P(t)$ is a property that is not inherently preserved by all integration methods. This necessitates the use of either symplectic integration methods (often tailored for DREs) or factorizing $P(t)$.
