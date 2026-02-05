@@ -31,11 +31,13 @@
     - [Continuous-time Infinite-horizon](LQR-CT-IH.md)
     - [Continuous-time Finite-horizon](LQR-CT-FH.md)
 
-- [(Linear-Quadratic) MPC](MPC.md)
-  - [Explicitly constrained](MPC-Direct.md)
+- [Model Predictive Control](MPC.md)
+  - [Linear Quadratic Problems](LQ_MPC.md)
+  - [Nonlinear Problems]()
+  <!-- - [Explicitly constrained](MPC-Direct.md) -->
     <!-- - [Reference Tracking](MPC-Direct-Tracking.md) -->
-  - [Implicity constrained]()
   <!-- - [Implicity constrained](MPC-Indirect.md) -->
+
 
 # Optimal Estimation
 - [Optimal Luenberger Observer](OptimalLuenbergerObserver.md)
@@ -52,6 +54,13 @@
 - [Nonlinear Programming](NLP-Examples.md)
 - [Model Predictive Control](MPC-Examples.md)
 -->
+
+---
+
+# Supplementary
+
+- [Derivation of the Riccati Recursion](RiccatiRecursion.md)
+- [Trajectory optimization using OSQP](MPC-Direct.md)
 
 ---
 
