@@ -1,4 +1,6 @@
-# Unconstrained Linear Quadratic Problem
+# Linear Quadratic Trajectory Optimization Problems
+
+## Unconstrained Problems
 
 Let us start by addressing the case where dynamics of our system are linear and the cost functions quadratic
 $$
@@ -15,7 +17,7 @@ This problem is very similar to that of finite-horizon LQR. In fact, it differs 
 
 There are a few approach that can be used to solve this problem which differ mostly in their algorithmic complexity based on how the sparse structure of optimization problem is exploited.
 
-## Condensing
+### Condensing
 
 One way to exploit the block sparse structure is to eliminate states $x_{0:N}$ from the problem's decision variables. As the constraint (2b) corresponds to the evolution of a linear time-varying system, states $x_{0:N}$ are fully determined by inputs $u_{0:N-1}$ and the initial state $\hat{x}_0$
 $$
@@ -29,7 +31,7 @@ $$
 $$
 As a consequence of these eliminations, the resulting optimization problem is unconstrained and the matrix (of the quadratic term) in the objective function is dense. The algorithmic complexity of condensing is typically $\mathcal{O}(N^3 n_u^3)$.
 
-## Solving the KKT system
+### Solving the KKT system
 
 Another way to exploit the sparse structure is to solve the problem's KKT conditions
 $$
@@ -71,7 +73,7 @@ $$
 
 either using sparse linear algebra routines or by manual factorizations. In both cases the algorithmic complexity of $\mathcal{O}(N (n_x + n_u)^3)$ can be achieved.  
 
-### Riccati recursion
+#### Riccati recursion
 
 Riccati recursion is a process of factorizing the system of KKT conditions. If we consider the KKT conditions 
 $$
@@ -128,8 +130,10 @@ k = N-1, \quad P_{k+1} = Q_N, \quad p_{k+1} = q_N
 $$
 and traversing the horizon backwards to $k=0$. The optimal inputs $u_k^*$ are given as an affine function of $x_k$
 $$
+\begin{aligned}
 \tag{4}
-u_k^* = -(R_k + B_k^\top P_{k+1} B_k)^{-1} (r_k + B_k^\top (p_{k+1} + P_{k+1} c_k) + (S_k + B_k^\top P_{k+1} A_k) x_k).
+u_k^* &= -(R_k + B_k^\top P_{k+1} B_k)^{-1} (r_k + B_k^\top (p_{k+1} + P_{k+1} c_k)) \\ &\quad - (R_k + B_k^\top P_{k+1} B_k)^{-1} (S_k + B_k^\top P_{k+1} A_k) x_k.
+\end{aligned}
 $$
 
 The name "Riccati recursion" is not incidental. In fact there is a close relationship between the factorization process we have just described and obtaining the optimal control using [discrete-time finite-horizon LQR](LQR-DT-FH). First of all, terms $P_k$ and $p_k$ can be used to form the *value function*
@@ -140,7 +144,7 @@ Then if we look at (3a) we can see that it differs from the *discrete-time dynam
 
 The full derivation of the Riccati recursion is located [here](RiccatiRecursion.md).
 
-## Constrained Linear Quadratic Problems
+## Constrained Problems
 
 In addition to (2b-c) we may also add other affine equality/inequality constraints, such as
 $$

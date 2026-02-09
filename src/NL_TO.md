@@ -1,3 +1,6 @@
+# Nonlinear Trajectory Optimization Problems
+
+## Unconstrained Problems
 Lets return to the unconstrained trajectory optimization problem
 $$
 \begin{aligned}
