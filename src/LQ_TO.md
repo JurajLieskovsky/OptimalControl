@@ -4,14 +4,14 @@ Let us start by addressing the case where dynamics of our system are linear and 
 $$
 \begin{aligned}
   \tag{2a-c}
-  \min_{x_{0:N}, u_{0:N-1}} & \quad q_N^\top \, x_N + \frac{1}{2} x_N^\top Q_N x_N + \sum_{k=0}^{N-1}
+  \min_{x_{0:N}, u_{0:N-1}} & \quad q_N^\top \, x_N + \frac{1}{2} x_N^\top Q_N x_N + \sum_{k=0}^{N-1} \left(
     \begin{bmatrix} q_k \\ r_k \end{bmatrix}^\top \begin{bmatrix} x_k \\ u_k \end{bmatrix} +
-    \frac{1}{2} \begin{bmatrix} x_k \\ u_k \end{bmatrix}^\top \begin{bmatrix} Q_k & S_k^\top \\ S_k & R_k \end{bmatrix} \begin{bmatrix} x_k \\ u_k \end{bmatrix} \\
+    \frac{1}{2} \begin{bmatrix} x_k \\ u_k \end{bmatrix}^\top \begin{bmatrix} Q_k & S_k^\top \\ S_k & R_k \end{bmatrix} \begin{bmatrix} x_k \\ u_k \end{bmatrix} \right) \\
   \text{s.t.} & \quad x_{k+1} = A_k x_k + B_k u_k + c_k, \quad k = 0, \ldots, N-1 \\
               & \quad x_0 = \hat{x}_0
 \end{aligned}
 $$
-This problem is very similar to that of finite-horizon LQR. In fact, it differs only in the inclusion of the cross term $S_k$, which can also be easily incorporated into LQR and linear terms $q_k$ and $r_k$ which can be accounted for in LQR if one considers the value function in the form $V_k = p_k^\top x_k + x_k^\top P_k x_k$.
+This problem is very similar to that of finite-horizon LQR. In fact, it differs only in the inclusion of the cross term $S_k$, which can also be easily incorporated into LQR and linear terms $q_k$ and $r_k$ which can be accounted for in LQR if one considers the value function in the form $V(x_k,k) = p_k^\top x_k + x_k^\top P_k x_k$.
 
 There are a few approach that can be used to solve this problem which differ mostly in their algorithmic complexity based on how the sparse structure of optimization problem is exploited.
 
@@ -140,6 +140,15 @@ Then if we look at (3a) we can see that it differs from the *discrete-time dynam
 
 The full derivation of the Riccati recursion is located [here](RiccatiRecursion.md).
 
-## Constrained Linear Quadratic Problem
+## Constrained Linear Quadratic Problems
 
-In addition to (2b-c) we may also add other affine equality/inequality constraints at which point the problem is still classified as a quadratic program. In this case, for maximal efficiency, we can either use [optimization modeling languages](OptimizationModelingLanguages.md) or use sparse solvers such as [OSQP](https://osqp.org/).
+In addition to (2b-c) we may also add other affine equality/inequality constraints, such as
+$$
+\begin{gathered}
+x_N = \hat{x}_N \\
+u_{\min} \leq u_k \leq u_{\max} \\
+G_{x_k} x_k + G_{u_k} u_k \geq -g_k
+,
+\end{gathered}
+$$
+at which point the problem is still classified as a quadratic program. In this case, for maximal efficiency, we can either use [optimization modeling languages](OptimizationModelingLanguages.md) or use sparse solvers for QP, such as [OSQP](https://osqp.org/). Alternatively, constraint optimization methods can be used to form a sequence of problems similar to (2) which can be solved using the Riccati recursion.

@@ -14,7 +14,7 @@ $$
 where $\Phi$ is the final cost, $l$ the running cost, $f$ are the system's dynamics, and $\hat{x}_0$ is the initial state. In addition to constraints (2b-c) we may include additional constraints such as
 - equality
   $$ h(x_k, u_k, k) = 0 $$
-  $$ x_N = \hat{x_N} $$
+  $$ x_N = \hat{x}_N $$
 - inequality
   $$ g(x_k, u_k, k) \leq 0 $$
 - box
@@ -23,4 +23,4 @@ where $\Phi$ is the final cost, $l$ the running cost, $f$ are the system's dynam
 - second-order cone
 - ...
 
-The decision of which constraints are included is not only specific to the problem but also the solver/method we want to use.
+The decision of which constraints are included should not be made only based on problem at hand but also the solver/method we want to use.

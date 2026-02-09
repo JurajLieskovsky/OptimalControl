@@ -1,32 +1,38 @@
 # Hamilton-Jacobi-Bellman Equation
 Let us assume we are trying to minimize the total cost
 $$
-J(\bm{x}(t_0),\bm{u}(\tau),t_0) = \Phi(\bm{x}(t_f)) + \int_{t_0}^{t_f} l(\bm{x}(\tau),\bm{u}(\tau),\tau) \, d\tau .
+J(x(t_0),u(\tau),t_0) = \Phi(x(t_f)) + \int_{t_0}^{t_f} l(x(\tau),u(\tau),\tau) \, d\tau .
 $$
-of a continuous-time system's trajectory $\bm{x}(\tau)$, $\tau \in \langle t_0, t_f \rangle$ with dynamics in the form
+of a continuous-time system's trajectory $x(\tau)$, $\tau \in [t_0, t_f]$ with dynamics in the form
 $$
-\dot{\bm{x}}(t) = \bm{f}(\bm{x}(t),\bm{u}(t),t) ,
+\dot{x}(t) = f(x(t),u(t),t) ,
 $$
-starting from the state $\bm{x}(t_0) = \tilde{\bm{x}}_0$.
+starting from the state $x(t_0) = \tilde{x}_0$.
 
 
-The concept of the total cost can be generalized for any $t \in \langle t_0, t_f \rangle$ to a cost-to-go
+The concept of the total cost can be generalized for any $t \in [t_0, t_f]$ to a cost-to-go
 $$
-J(\bm{x}(t),\bm{u}(\tau),t) = \Phi(\bm{x}(t_f)) + \int_{t}^{t_f} l(\bm{x}(\tau),\bm{u}(\tau),\tau) \, d\tau ,
+J(x(t),u(\tau),t) = \Phi(x(t_f)) + \int_{t}^{t_f} l(x(\tau),u(\tau),\tau) \, d\tau ,
 $$
 for which we may define a value function
 $$
-V(\bm{x}(t),t) = \min_{\bm{u}(\tau)} J(\bm{x}(t),\bm{u}(\tau),t),
+\begin{aligned}
+V(x(t),t) = \min_{u(\tau)} &\enspace J(x(t),u(\tau),t), \quad \tau \in [t, t_f) , \\
+\text{s.t.} &\enspace \dot{x}(\tau) = f(x(\tau),u(\tau),\tau), \quad \forall \tau \in [t, t_f] 
+\end{aligned}
 $$
 and optimal control policy
 $$
-\bm{u}^*(\tau) = \argmin_{\bm{u}(\tau)} J(\bm{x}(t),\bm{u}(\tau),t), \quad \tau \in \langle t, t_f )
+\begin{aligned}
+u^*(\tau) = \argmin_{u(\tau)} &\enspace J(x(t),u(\tau),t), \quad \tau \in [t, t_f) , \\
+\text{s.t.} &\enspace \dot{x}(\tau) = f(x(\tau),u(\tau),\tau), \quad \forall \tau \in [t, t_f] 
+\end{aligned}
 $$
-the application of which results in the system following an optimal trajectory $\bm{x}^*(\tau)$, $\tau \in (t,t_f\rangle$.
+the application of which results in the system following an optimal trajectory $x^*(\tau)$, $\tau \in (t,t_f]$.
 
 For the previously defined value function the Hamilton-Jacobi-Bellman (HJB) equation can be derived[^2] as
 $$
--\frac{\partial V}{\partial t}(\bm{x}(t),t) = \min_{\bm{u}(t)} \left(l(\bm{x}(t),\bm{u}(t),t) + \left(\frac{\partial V}{\partial \bm{x}}\right)^\top\!(\bm{x}(t),t) \, \bm{f}(\bm{x}(t),\bm{u}(t),t) \right) .
+-\frac{\partial V}{\partial t}(x(t),t) = \min_{u(t)} \left(l(x(t),u(t),t) + \left(\frac{\partial V}{\partial x}\right)^\top\!(x(t),t) \, f(x(t),u(t),t) \right) .
 $$
 
 ---
@@ -36,16 +42,16 @@ $$
 <!--
 ### HBJ Derivation
 $$
-\frac{d}{dt} V(\bm{x}(t),t,t_f) = \min_{\bm{u}(t)} \frac{d}{dt} J(\bm{x}(t),\bm{u}(t),t,t_f) 
+\frac{d}{dt} V(x(t),t,t_f) = \min_{u(t)} \frac{d}{dt} J(x(t),u(t),t,t_f) 
 $$
 $$
-  \frac{d}{dt} V(\bm{x}(t),t,t_f) = \frac{\partial V}{\partial t} + \left(\frac{\partial V}{\partial x}\right)^\top \frac{d{\bm{x}}^*}{dt}
+  \frac{d}{dt} V(x(t),t,t_f) = \frac{\partial V}{\partial t} + \left(\frac{\partial V}{\partial x}\right)^\top \frac{d{x}^*}{dt}
 $$
 $$
 \begin{aligned}
-\min_{\bm{u}(t)} \frac{d}{dt} J(\bm{x}(t),\bm{u}(t),t,t_f) &= \min_{\bm{u}(t)} \frac{d}{dt} \left(\Phi(\bm{x}(t_f)) + \int_{t}^{t_f} l(\bm{x}(\tau),\bm{u}(\tau)) \, d\tau \right) \\
-&= \min_{\bm{u}(t)} \left( \frac{d}{dt} \int_{t}^{t_f} l(\bm{x}(\tau),\bm{u}(\tau)) \, d\tau \right) \\
-&= \min_{\bm{u}(t)} -l(\bm{x}(t),\bm{u}(t)) 
+\min_{u(t)} \frac{d}{dt} J(x(t),u(t),t,t_f) &= \min_{u(t)} \frac{d}{dt} \left(\Phi(x(t_f)) + \int_{t}^{t_f} l(x(\tau),u(\tau)) \, d\tau \right) \\
+&= \min_{u(t)} \left( \frac{d}{dt} \int_{t}^{t_f} l(x(\tau),u(\tau)) \, d\tau \right) \\
+&= \min_{u(t)} -l(x(t),u(t)) 
 \end{aligned}
 $$
 --->

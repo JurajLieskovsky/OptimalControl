@@ -32,8 +32,8 @@
     - [Continuous-time Finite-horizon](LQR-CT-FH.md)
 
 - [Model Predictive Control](MPC.md)
-  - [Linear Quadratic Problems](LQ_MPC.md)
-  - [Nonlinear Problems]()
+  - [Linear Quadratic Problems](LQ_TO.md)
+  - [Nonlinear Problems](NL_TO.md)
   <!-- - [Explicitly constrained](MPC-Direct.md) -->
     <!-- - [Reference Tracking](MPC-Direct-Tracking.md) -->
   <!-- - [Implicity constrained](MPC-Indirect.md) -->
