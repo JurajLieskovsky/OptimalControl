@@ -11,6 +11,7 @@
 - [State-Space Representation of Mechanical Systems](EoM.md)
   - [Cart-Pole](CartPoleEoM.md)
   - [Bi-Rotor](BiRotorEoM.md)
+  - [Bi-Rotor with Payload](PayloadBiRotorEoM.md)
 
 # Numerical Optimization
 - [Convex optimization problems](OPT-Intro.md)
