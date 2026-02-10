@@ -48,7 +48,7 @@ $$
   \bar{u}_k &\leftarrow \bar{u}_k + \delta u_k
 \end{aligned}
 $$
-but typically *line-search* strategies must be used. Also the quadratic problem is not necessarily convex and therefore must be *regularized*. The problem (2) itself has the same exact form of the [linear-quadratic problem](LQ_TO.md) we previously described so once line-search and regularization are handled, we can use the same exact techniques.
+but typically *line-search* strategies must be used. Also the quadratic problem is not necessarily convex in which case it must be *regularized*. The problem (2) itself has the same exact form of the [unconstrained linear-quadratic problem](LQ_TO.md#unconstrained-problems) we previously described so once line-search and regularization are handled, we can use the same exact techniques.
 
 ## Constrained Problems
 
