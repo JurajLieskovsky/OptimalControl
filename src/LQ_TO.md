@@ -13,7 +13,7 @@ $$
               & \quad x_0 = \hat{x}_0
 \end{aligned}
 $$
-This problem is very similar to that of finite-horizon LQR. In fact, it differs only in the inclusion of the cross term $S_k$, which can also be easily incorporated into LQR and linear terms $q_k$ and $r_k$ which can be accounted for in LQR if one considers the value function in the form $V(x_k,k) = p_k^\top x_k + x_k^\top P_k x_k$.
+This problem is very similar to that of finite-horizon LQR. In fact, it differs only in the inclusion of the cross term $S_k$, which can also be easily incorporated into LQR and linear terms $q_k$ and $r_k$ which can be accounted for in LQR if one considers the value function in the form $V(x_k,k) = p_k^\top x_k + x_k^\top P_k x_k$. Also there is an additional term $c_k$ who's utility we will show later, when discussing nonlinear trajectory optimization.
 
 There are a few approach that can be used to solve this problem which differ mostly in their algorithmic complexity based on how the sparse structure of optimization problem is exploited.
 
