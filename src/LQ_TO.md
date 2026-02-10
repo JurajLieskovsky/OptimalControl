@@ -155,4 +155,4 @@ G_{x_k} x_k + G_{u_k} u_k \geq -g_k
 ,
 \end{gathered}
 $$
-at which point the problem is still classified as a quadratic program. In this case, for maximal efficiency, we can either use [optimization modeling languages](OptimizationModelingLanguages.md) or use sparse solvers for QP, such as [OSQP](https://osqp.org/). Alternatively, constraint optimization methods can be used to form a sequence of problems similar to (2) which can be solved using the Riccati recursion.
+at which point the problem is still classified as a quadratic program. In this case, without the knowledge of constrained optimization method, we can either use [optimization modeling languages](OptimizationModelingLanguages.md) or [use sparse solvers for QP](MPC-Direct.md). Alternatively, if constraint optimization methods are applied, they generally form a sequence of problems similar to (2) which can be solved using the Riccati recursion.
