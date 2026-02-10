@@ -26,7 +26,7 @@ $$
   x_1 &= A_0 \hat{x}_0 + B_0 u_0 + c_0 \\
   x_2 &= A_1 A_0 \hat{x}_0 + A_1 (B_0 u_0 + c_0) + (B_1 u_1 + c_1) \\
       &\enspace\vdots \\
-  x_N &= \prod_{k=N-1}^0 A_k \hat{x}_0 + \prod_{k=N-1}^1 A_k B_0 u_0 + \prod_{k=N-2}^2 A_k (B_1 u_1 + c_1) + \ldots + (B_{N-1} u_{N-1} + c_{N-1}).
+  x_N &= \prod_{k=N-1}^0 A_k \hat{x}_0 + \prod_{k=N-1}^1 A_k (B_0 u_0 + c_0) + \ldots + (B_{N-1} u_{N-1} + c_{N-1}).
 \end{aligned}
 $$
 As a consequence of these eliminations, the resulting optimization problem is unconstrained and the matrix (of the quadratic term) in the objective function is dense. The algorithmic complexity of condensing is typically $\mathcal{O}(N^3 n_u^3)$.
