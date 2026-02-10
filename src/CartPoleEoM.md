@@ -1,25 +1,6 @@
 # Cart-Pole Equations of Motion
-```
-                  \
-                  /\
-                 /  \
-                /    \
-               l      \
-              /       >< m_p
-             /       //
-            /       //
-          \/       //
-           \      //
-            \    //
-  |   |------\--//------|
-  |   |       \//\      |
-  g   |  m_c  ( ) theta |
-  |   |        |_/      |
-  v   |========|========|
-_________ooo___|___ooo_________
-               |
-//|-----s----->|
-```
+<img src=cart-pole.svg width=600px alt="author: Jaroslav Bušek">
+
 For generalized coordinates $q = \begin{bmatrix} s & \theta \end{bmatrix}^\top$ the system's kinetic and potential energy are
 $$
 \begin{aligned}
