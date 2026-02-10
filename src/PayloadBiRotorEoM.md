@@ -17,7 +17,7 @@ The two forces acting on the system and their action arms are
 $$
 F_{1,2} = u_{1,2} \begin{bmatrix} -\sin(\theta) \\ \cos(\theta) \end{bmatrix}
 ,\quad
-r_{1,2} = \begin{bmatrix} y \mp r \cos(\phi) \\ z \mp r \sin(\phi) \end{bmatrix}.
+r_{1,2} = \begin{bmatrix} y \mp a \cos(\theta) \\ z \mp a \sin(\theta) \end{bmatrix}.
 $$
 The individual terms of the manipulator equations are then
 $$
