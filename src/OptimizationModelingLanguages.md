@@ -4,7 +4,7 @@
 "Open source Python-embedded modeling language for convex optimization problems"
 <!-- - [choosing a solver](https://www.cvxpy.org/tutorial/advanced/index.html#choosing-a-solver) -->
 
-## [Pyomo](pyomo.org)
+## [Pyomo](https://www.pyomo.org)
 "Python-based, open-source optimization modeling language with a diverse set of optimization capabilities"
 
 ## [JuMP](https://jump.dev/)
