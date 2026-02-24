@@ -24,8 +24,8 @@ Let's assign decision variables $x_i$ to each edge of the graph.
 
 ```mermaid
 graph LR;
-    A["Source"];
-		D["Sink"];
+    A["Origin"];
+		D["Destination"];
 		A-->|"x₀"|B1;
     A-->|"x₁"|B2;
     B1-->|"x₂"|C1;
@@ -36,7 +36,7 @@ graph LR;
 		C2-->|"x₇"|D;
 ```
 
-If we select to traverse a specific edge $x_i = 1$ which is associated with the cost $c_i x_i$, where $c_i$ are the weights of individual edges. Naturally we must also include the constraint $x_7 + x_8 = 1$ to ensure that we traverse through the graph as well as constraints ensuring continuity in the graph's vertices. One would expect that $x_i$ would have to be limited to integer values, but in fact continuous values are sufficient.
+If we select to traverse a specific edge $x_i = 1$ which is associated with the cost $c_i x_i$, where $c_i$ are the weights of individual edges. Naturally we must also include the constraint $x_6 + x_7 = 1$ to ensure that we traverse through the graph as well as constraints ensuring continuity in the graph's vertices. One would expect that $x_i$ would have to be limited to integer values, but in fact continuous values are sufficient.
 
 The problem as a whole takes the form
 $$
