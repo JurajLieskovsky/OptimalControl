@@ -12,7 +12,7 @@ $$
 \end{aligned}
 $$
 
-### Canonical form
+### Canonical Form
 $$
 \begin{aligned}
 	\max_{x} & \quad c^\top x \\
