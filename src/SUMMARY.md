@@ -45,10 +45,14 @@
 - [Kalman Filter](KF.md)
 - [Moving Horizon Estimation]()
 
-<!--
 ---
 
 # Examples
+- [Profit Maximization](examples/car_import.md)
+- [Maximum Flow](examples/flow.md)
+- [Shortest Path](examples/shortest_path.md)
+
+<!--
 
 - [Linear Programming](LP-Examples.md)
 - [Quadratic Programming](QP-Examples.md)
