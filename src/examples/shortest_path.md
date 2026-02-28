@@ -36,7 +36,7 @@ graph LR;
 		C2-->|"x₇"|D;
 ```
 
-If we select to traverse a specific edge $x_i = 1$ which is associated with the cost $c_i x_i$, where $c_i$ are the weights of individual edges. Naturally we must also include the constraint $x_6 + x_7 = 1$ to ensure that we traverse through the graph as well as constraints ensuring continuity in the graph's vertices. One would expect that $x_i$ would have to be limited to integer values, but in fact continuous values are sufficient.
+If we select to traverse a specific edge $x_i = 1$ which is associated with the cost $c_i x_i$, where $c_i$ are the weights of individual edges. Naturally we must also include the constraint $x_6 + x_7 = 1$ to ensure that we traverse through the graph as well as constraints ensuring continuity in the graph's vertices. One would expect that $x_i$ would have to be binary, but they can be in fact continuous variables.
 
 The problem as a whole takes the form
 $$
