@@ -51,6 +51,7 @@
 - [Profit Maximization](examples/car_import.md)
 - [Maximum Flow](examples/flow.md)
 - [Shortest Path](examples/shortest_path.md)
+- [Economic Dispatch](examples/economic_dispatch.md)
 
 <!--
 
