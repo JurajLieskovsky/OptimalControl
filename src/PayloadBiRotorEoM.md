@@ -4,7 +4,7 @@ For generalized coordinates $q = \begin{bmatrix} y & z & \theta & \phi \end{bmat
 $$
 \begin{aligned}
   T &= \frac{1}{2}\left(m_Q (\dot{y}^2 + \dot{z}^2) + I_Q \dot{\theta}^2 + m_P (\dot{y}_P^2 + \dot{z}_P^2)\right) \\
-  V &= g \, m_Q \, y + g \, m_P (y - l \cos(\phi))
+  V &= g \, m_Q \, z + g \, m_P (z - l \cos(\phi))
 \end{aligned}
 $$
 where
