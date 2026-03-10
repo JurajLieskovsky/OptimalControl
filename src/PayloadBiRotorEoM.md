@@ -23,15 +23,15 @@ The individual terms of the manipulator equations are then
 $$
 \begin{aligned}
 M &= \begin{bmatrix}
-	2 m_Q & 0 & 0 & l \, m_Q \cos{(\phi)} \\
-	0 & 2 m_Q & 0 & l \, m_Q \sin(\phi) \\
+	m_Q + m_P & 0 & 0 & l \, m_P \cos{(\phi)} \\
+	0 & m_Q + m_P & 0 & l \, m_P \sin(\phi) \\
 	0 & 0 & I_Q & 0 \\
-	l \, m_Q \cos(\phi) & l \, m_Q \sin(\phi) & 0 & l^{2} m_Q
+	l \, m_P \cos(\phi) & l \, m_P \sin(\phi) & 0 & l^{2} m_Q
 \end{bmatrix}
 \\
 c &= \begin{bmatrix}
-	- l \, m_Q \sin(\phi) \, \dot{\phi}^2 \\
-	l \, m_Q \cos(\phi) \, \dot{\phi}^2 \\
+	- l \, m_P \sin(\phi) \, \dot{\phi}^2 \\
+	l \, m_P \cos(\phi) \, \dot{\phi}^2 \\
 	0 \\
 	0
 \end{bmatrix}
@@ -48,5 +48,3 @@ B &= \begin{bmatrix}
 \end{bmatrix}
 \end{aligned}
 $$
-
-
