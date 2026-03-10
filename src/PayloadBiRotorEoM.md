@@ -22,16 +22,30 @@ $$
 The individual terms of the manipulator equations are then
 $$
 \begin{aligned}
-	M
-	&=
-	\begin{bmatrix}
-	\end{bmatrix}
-	\\
-	c &= \begin{bmatrix}\end{bmatrix}
-	\\
-	\tau_g &= \begin{bmatrix}\end{bmatrix}
-	\\
-	B &= \begin{bmatrix}\end{bmatrix},
+M &= \begin{bmatrix}
+	2 m_Q & 0 & 0 & l \, m_Q \cos{(\phi)} \\
+	0 & 2 m_Q & 0 & l \, m_Q \sin(\phi) \\
+	0 & 0 & I_Q & 0 \\
+	l \, m_Q \cos(\phi) & l \, m_Q \sin(\phi) & 0 & l^{2} m_Q
+\end{bmatrix}
+\\
+c &= \begin{bmatrix}
+	- l \, m_Q \sin(\phi) \, \dot{\phi}^2 \\
+	l \, m_Q \cos(\phi) \, \dot{\phi}^2 \\
+	0 \\
+	0
+\end{bmatrix}
+\\
+\tau_p &= \begin{bmatrix}
+	0 \\
+	-g (m_P + m_Q) \\
+	0 \\
+	-g \, l \, m_P \sin(\phi)
+\end{bmatrix}
+\\
+B &= \begin{bmatrix}
+	-\sin{(\theta)} & - \sin{(\theta)}\\\cos{(\theta)} & \cos{(\theta)}\\- a & a\\0 & 0
+\end{bmatrix}
 \end{aligned}
 $$
 
