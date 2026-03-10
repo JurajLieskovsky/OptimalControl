@@ -26,7 +26,7 @@ M &= \begin{bmatrix}
 	m_Q + m_P & 0 & 0 & l \, m_P \cos{(\phi)} \\
 	0 & m_Q + m_P & 0 & l \, m_P \sin(\phi) \\
 	0 & 0 & I_Q & 0 \\
-	l \, m_P \cos(\phi) & l \, m_P \sin(\phi) & 0 & l^{2} m_Q
+	l \, m_P \cos(\phi) & l \, m_P \sin(\phi) & 0 & l^{2} m_P
 \end{bmatrix}
 \\
 c &= \begin{bmatrix}
