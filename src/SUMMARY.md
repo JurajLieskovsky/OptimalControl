@@ -27,10 +27,10 @@
 <!-- - [Pontryagin's Minimum Principle](PMP.md) -->
   <!-- - [Hamilton's Equations](HamiltonsEquations.md) -->
 - [Linear-Quadratic Regulator](LQR.md)
-    - [Discrete-time Infinite-horizon](LQR-DT-IH.md)
     - [Discrete-time Finite-horizon](LQR-DT-FH.md)
-    - [Continuous-time Infinite-horizon](LQR-CT-IH.md)
+    - [Discrete-time Infinite-horizon](LQR-DT-IH.md)
     - [Continuous-time Finite-horizon](LQR-CT-FH.md)
+    - [Continuous-time Infinite-horizon](LQR-CT-IH.md)
 
 - [Model Predictive Control](MPC.md)
   - [Linear Quadratic Problems](LQ_TO.md)
