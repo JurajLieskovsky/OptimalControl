@@ -23,6 +23,15 @@ u_k^* = - \left(R_k + B_k^\top P_{k+1} B_k\right)^{-1} B_k^\top P_{k+1} A_k \, x
 $$
 
 The input can then be substituted back into (1). As the equation must hold for all $x_k$, through basic manipulations we then attain the *discrete-time dynamic Riccati equation (DDRE)*
+<!--$$
+\begin{aligned}
+x_k^\top P_k x_k &= x_k^\top Q_k x_k^\top \\
+&+ x_k^\top A_k^\top P_{k+1} B_k \left(R_k + B_k^\top P_{k+1} B_k\right)^{-1} \boxed{R_k} \left(R_k + B_k^\top P_{k+1} B_k\right)^{-1} B_k^\top P_{k+1} A_k \, x_k \\
+&+ x_k^\top A_k^\top P_{k+1} A_k x_k \\
+&- 2 \, x_k^\top A_k^\top P_{k+1} B_k \left(R_k + B_k^\top P_{k+1} B_k\right)^{-1} B_k^\top P_{k+1} A_k x_k \\
+&+ x_k^\top A_k^\top P_{k+1} B_k \left(R_k + B_k^\top P_{k+1} B_k\right)^{-1} \boxed{B_k^\top P_{k+1} B_k} \left(R_k + B_k^\top P_{k+1} B_k\right)^{-1} B_k^\top P_{k+1} A_k \, x_k \\
+\end{aligned}
+$$-->
 $$
 P_k = Q_k + A_k^\top P_{k+1} A_k - A_k^\top P_{k+1} B_k \left(B_k^\top P_{k+1} B_k + R_k\right)^{-1} B_k^\top P_{k+1} A_k, \quad P_N = Q_N
 $$
