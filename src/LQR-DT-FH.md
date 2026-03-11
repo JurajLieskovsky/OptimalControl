@@ -6,8 +6,8 @@ x_{k+1} = \underbrace{A_k x_k + B_k u_k}_{f(x_k, u_k, k)}
 $$
 and a quadratic total cost
 $$
-J(x_0,u_{0:N-1},0) = \underbrace{x_N^\top \, Q_N \, x_N}_{\Phi(x_N)} + \sum_{i=0}^{N-1} \underbrace{x_i^\top Q_i \, x_i + u_i^\top R_k \, u_i}_{l(x_i, u_i, i)}
-, \quad Q_k \succeq 0, \; R_k \succ 0
+J(x_0,u_{0:N-1},0) = \underbrace{x_N^\top \, Q_N \, x_N}_{\Phi(x_N)} + \sum_{i=0}^{N-1} \underbrace{x_i^\top Q_i \, x_i + u_i^\top R_i \, u_i}_{l(x_i, u_i, i)}
+, \quad Q_i \succeq 0, \; R_i \succ 0
 $$
 of its trajectory $(x_{0:N}, u_{0:N-1})$ the optimal controller can be derived based on the assumption that the value function takes the form
 $$
