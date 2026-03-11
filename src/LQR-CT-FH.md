@@ -10,7 +10,7 @@ J(x(t_0),u(\tau),t_0) = \underbrace{x(t_f)^\top Q_f \, x(t_f)}_{\Phi(x_N)} + \in
 $$
 where $Q_f \succeq 0$, $Q(t) \succeq 0$, and $R(t) \succ 0$, of its trajectory $(x(\tau), u(\tau))$, $\tau \in \langle t_0,t_f\rangle$ the optimal controller can be derived based on the assumption that the value function takes the form
 $$
-V(x(t),t) = x(t)^\top P(t) \, x(t), \quad P(t) \succ 0.
+V(x(t),t) = x(t)^\top P(t) \, x(t), \quad P(t) \succeq 0.
 $$
 When substituted into the [Hamilton-Jacobi-Bellman Equation](HJB.md) along with the system's dynamics we attain
 $$

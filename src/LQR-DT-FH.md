@@ -11,7 +11,7 @@ J(x_0,u_{0:N-1},0) = \underbrace{x_N^\top \, Q_N \, x_N}_{\Phi(x_N)} + \sum_{i=0
 $$
 of its trajectory $(x_{0:N}, u_{0:N-1})$ the optimal controller can be derived based on the assumption that the value function takes the form
 $$
-V(x_k,k) = x_k^\top P_k \, x_k, \quad P_k \succ 0.
+V(x_k,k) = x_k^\top P_k \, x_k, \quad P_k \succeq 0.
 $$
 When substituted into the [Bellman Equation](BellmanEqn.md) along with the system's dynamics we attain
 $$
